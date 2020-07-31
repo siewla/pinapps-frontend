@@ -75,7 +75,7 @@ const Register = () => {
                         value={password1}
                     />
                     <input 
-                        type="text" 
+                        type="password" 
                         placeholder="confirm password"
                         onChange={handleChange('password2')}
                         value={password2}
