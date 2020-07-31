@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { ToastContainer, toast } from 'react-toastify'
 import { authenticate, isAuth } from '../helpers/auth'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
@@ -22,10 +21,12 @@ const Register = () => {
 
     //submit data to backend
     const handleSubmit = event =>{
+        // console.log(process.env.REACT_APP_BACKEND_API_URL)
         event.preventDefault()
+        console.log(name, email, password1)
         if(name && email && password1){
             if (password1 === password2){
-                axios.post(`${process.env.BACKEND_API_URL}/register`,{
+                axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/register`,{
                     name, email, password:password1
                 })
                     .then(res =>{
@@ -37,16 +38,16 @@ const Register = () => {
                         password2:''
                     })
 
-                    toast.success(res.data.message)
+                    console.log('success')
                 })
                     .catch(err =>{
-                        toast.error(err.response.data.error)
+                        console.log(err)
                     })
             } else{
-                toast.error('Passwords don\'t match')
+                console.log('Passwords don\'t match')
             }
         }else{
-            toast.error('Please fill in all the fields')
+                console.log('Please fill in all the fields')
         }
     }
     return (
