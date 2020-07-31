@@ -1,55 +1,71 @@
-import React, { useState, useEffect} from 'react'
+import React, { Component } from 'react'
+import jwt from 'jsonwebtoken';
 import axios from 'axios'
-import jwt from 'jsonwebtoken'
-import { authenticate, isAuth } from '../helpers/auth'
-import { Link, Redirect } from 'react-router-dom'
 
-const Activate = ({match}) => {
-    const [formData, setFormData] = useState({  
-        name: '',
-        token:'',
-        show: true
-    })
-
-    useEffect(() => {
-        let token = match.params.token;
-        let { name } = jwt.decode(token);
-    
-        if (token) {
-            setFormData({ ...formData, name, token });
+export class Activatenew extends Component {
+    constructor (props){
+        super (props);
+        this.state = {
+            name: '',
+            token:'',
+            message: '',
         }
-    
-        console.log(token, name);
-    }, [formData, match.params]);
+    }
 
-    const { name, token } = formData;
-
-    const handleSubmit = event => {
-        event.preventDefault()
-        axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/activation/`,{
-            token
-        }).then(res =>{
-            // setFormData({...formData, show:false})
-            console.log(formData)
-            console.log(res.data.message)
-        }).catch(err =>{
-            console.log(formData)
-            console.log(err.response.data.error)
+    componentDidMount =()=> {
+        // console.log(this.state)
+        let token = this.props.match.params.token;
+        // console.log(token)
+        jwt.verify(token, 'pinappsprojectActivation2020', (err)=>{
+            if (err){
+                if(err.message === "jwt expired"){
+                    this.setState({
+                        message: 'Token Expired'
+                    })
+                } else{
+                    this.setState({
+                        message: 'Invalid Token'
+                    })
+                }
+            } else {
+                const { name } = jwt.decode(token);
+                this.setState({
+                    name: name,
+                    token:token,
+                    message: 'Valid Token'
+                })
+            }
         })
     }
 
-    return (
-        <div>
-        {isAuth() ?<Redirect to='/' />: null}
+    handleSubmit = (event) => {
+        event.preventDefault()
+        axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/activation/`,{
+            token:this.state.token
+        }).then(res =>{
+            this.setState({
+                message: res.data.message
+            })
+            console.log(res.data.message)
+        }).catch(err =>{
+            this.setState({
+                message: 'Token Activated Before'
+            })
+        })
+    }
+
+    render() {
+        return (
             <div>
-                <h1>Welcome {name}</h1>
-                <form onSubmit={handleSubmit}>
+                <h1>Welcome {this.state.name}</h1>
+                <h2>{this.state.message}</h2>
+                <form onSubmit={this.handleSubmit}>
                     <button type="submit">Activate Your Account</button>
                 </form>
                 <a href ='/register'><span>Not Registered?</span></a>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default Activate
+export default Activatenew
