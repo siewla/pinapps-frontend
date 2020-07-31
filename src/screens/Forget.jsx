@@ -26,20 +26,6 @@ const Forget = () => {
         // console.log(process.env.REACT_APP_BACKEND_API_URL)
         event.preventDefault()
         if(email){
-            // fetch(`${process.env.REACT_APP_BACKEND_API_URL}/password/reset`,{
-            //     method: 'PUT'
-            // })
-            // .then( response => response.json())
-            // .then( result => {
-            //     console.log('success')
-            //     setFormData({
-            //     ...formData,
-            //     email:'',
-            // })
-            // })
-            // .catch (error =>{
-            //     console.log(error)
-            // }) 
             axios({
                 method: 'PUT',
                 url: `${process.env.REACT_APP_BACKEND_API_URL}/password/forget`,
