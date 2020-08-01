@@ -86,6 +86,7 @@ const Login = () => {
                         Login
                     </button>
                 </form>
+
                 <GoogleLogin
                     clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
                     onSuccess={ responseGoogle }
