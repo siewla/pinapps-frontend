@@ -1,17 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import {BrowserRouter, Route, Switch } from 'react-router-dom'
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Register from './screens/Register'
+import Activate from './screens/Activate'
+import Login from './screens/Login'
+import Forget from './screens/Forget'
+import Reset from './screens/Reset'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <BrowserRouter>
+      <Switch>
+        <Route path ='/' exact render={props => <App {...props} />}/>
+        <Route path ='/users/register' exact render={props => <Register {...props} />}/>
+        <Route path ='/users/login' exact render={props => <Login {...props} />}/>
+        <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
+        <Route path ='/users/password/forget' exact render={props => <Forget {...props} />}/>
+        <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
+      </Switch>
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
