@@ -14,7 +14,7 @@ const Googlelogin = () => {
     
     //send google token
     const sendGoogleToken = tokenId => {
-        axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/googlelogin`,{
+        axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/googlelogin`,{
             idToken: tokenId
         })
         .then(res =>{

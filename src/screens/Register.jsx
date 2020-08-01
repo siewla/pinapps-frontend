@@ -35,7 +35,7 @@ const Register = () => {
         console.log(name, email, password1)
         if(name && email && password1){
             if (password1 === password2){
-                axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/register`,{
+                axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/register`,{
                     name, email, password:password1
                 })
                     .then(res =>{

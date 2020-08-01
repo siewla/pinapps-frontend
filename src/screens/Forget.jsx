@@ -29,7 +29,7 @@ const Forget = () => {
         if(email){
             axios({
                 method: 'PUT',
-                url: `${process.env.REACT_APP_BACKEND_API_URL}/password/forget`,
+                url: `${process.env.REACT_APP_BACKEND_API_URL}/auth/password/forget`,
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json;charset=UTF-8'

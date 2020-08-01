@@ -27,7 +27,7 @@ const Login = () => {
     const handleSubmit = event =>{
         event.preventDefault()
         if(email && password1){
-                axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/login`,{
+                axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/login`,{
                     email, password:password1
                 })
                     .then(res =>{

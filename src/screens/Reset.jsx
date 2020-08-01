@@ -52,7 +52,7 @@ export class Activate extends Component {
         if ((this.state.password1 === this.state.password2) && this.state.password1 && this.state.password2){
             axios({
                 method: 'PUT',
-                url: `${process.env.REACT_APP_BACKEND_API_URL}/password/reset`,
+                url: `${process.env.REACT_APP_BACKEND_API_URL}/auth/password/reset`,
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json;charset=UTF-8'
