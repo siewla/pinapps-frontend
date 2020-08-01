@@ -42,7 +42,7 @@ export class Activate extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/activation/`,{
+        axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/activation/`,{
             token:this.state.token
         }).then(res =>{
             this.setState({
