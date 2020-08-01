@@ -55,6 +55,7 @@ export const logout = next =>{
 
 //get user info from localstorage
 export const isAuth = () => {
+    // console.log(getCookie('token'))
     if(window !=='undefined'){
         const cookieChecked = getCookie('token')
         if (cookieChecked){

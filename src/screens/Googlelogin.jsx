@@ -1,9 +1,17 @@
-import React from 'react'
-import { authenticate} from '../helpers/auth'
+import React, {useState} from 'react'
+import { authenticate, isAuth } from '../helpers/auth'
 import axios from 'axios'
 import { GoogleLogin } from 'react-google-login'
+import { Redirect } from 'react-router-dom'
+import { MDBBtn } from 'mdbreact';
 
 const Googlelogin = () => {
+    // const [loginData, setLogin] = useState({
+    //     isLogin:false,
+    // })
+
+    // const { isLogin } = loginData
+    
     //send google token
     const sendGoogleToken = tokenId => {
         axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/googlelogin`,{
@@ -13,6 +21,9 @@ const Googlelogin = () => {
             authenticate(res, ()=>{
                 console.log('success')
             })
+            // setLogin({
+            //         isLogin: true
+            //     })
         })
         .catch(err =>{
             console.log(err)
@@ -24,10 +35,10 @@ const Googlelogin = () => {
         // console.log(response)
         sendGoogleToken(response.tokenId)
     }
-    
+
     return (
         <div>
-            <GoogleLogin
+            <GoogleLogin 
                     clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
                     onSuccess={ responseGoogle }
                     onFailure={ responseGoogle }
