@@ -1,52 +1,58 @@
-import React, {useState} from 'react'
+import React, {useState, Component} from 'react'
 import { authenticate, isAuth } from '../helpers/auth'
 import axios from 'axios'
 import { GoogleLogin } from 'react-google-login'
 import { Redirect } from 'react-router-dom'
 import { MDBBtn } from 'mdbreact';
 
-const Googlelogin = () => {
-    // const [loginData, setLogin] = useState({
-    //     isLogin:false,
-    // })
+class Googlelogin extends Component{
+    constructor(props) {
+        super(props)
+        this.state = {
+            message:''
+        }
+    }
+    refreshPage=()=> {
+        window.location.reload(false);
+    }
 
-    // const { isLogin } = loginData
-    
     //send google token
-    const sendGoogleToken = tokenId => {
+    sendGoogleToken = tokenId => {
         axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/googlelogin`,{
             idToken: tokenId
         })
         .then(res =>{
             authenticate(res, ()=>{
-                console.log(res)
+                this.refreshPage();
             })
-            // setLogin({
-            //         isLogin: true
-            //     })
         })
         .catch(err =>{
-            console.log(err)
+            this.setState({
+                message:'There was error happening'
+            })
         })
     }
 
     //get response from google 
-    const responseGoogle = response =>{
+    responseGoogle = response =>{
         // console.log(response)
-        sendGoogleToken(response.tokenId)
+        this.sendGoogleToken(response.tokenId)
     }
 
-    return (
-        <div>
-            <GoogleLogin 
-                    clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
-                    onSuccess={ responseGoogle }
-                    onFailure={ responseGoogle }
-                    cookiePolicy = { 'single_host_origin' }
-                >
-            </GoogleLogin>
-        </div>
-    )
+    render(){
+        return (
+            <div>
+                <p>{this.message}</p>
+                <GoogleLogin 
+                        clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
+                        onSuccess={ this.responseGoogle }
+                        onFailure={ this.responseGoogle }
+                        cookiePolicy = { 'single_host_origin' }
+                    >
+                </GoogleLogin>
+            </div>
+        )
+    }
 }
 
 export default Googlelogin
