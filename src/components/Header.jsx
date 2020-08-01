@@ -6,7 +6,9 @@ export class Header extends Component {
         return (
             <MDBNavbar className="justify-content-center" color="black">
                 <MDBNavbarBrand>
-                    <strong className="white-text"> Pin Apps</strong>
+                    <a href="/">
+                        <strong className="white-text"> Pin Apps</strong>
+                    </a>
                 </MDBNavbarBrand>
             </MDBNavbar>
         )
