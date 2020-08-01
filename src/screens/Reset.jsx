@@ -63,6 +63,7 @@ export class Activate extends Component {
                 }
             })
                 .then(response => {
+                    console.log(response)
                     this.setState({
                         password1: '',
                         password2:'',
@@ -70,16 +71,13 @@ export class Activate extends Component {
                     })
                 })
                 .catch(error => {
+                    console.log(error)
                     this.setState({
                         message: 'Reset Token Activated Before'
                     })
                 })   
         }else{
-            if(this.state.password1 ==='' || this.state.password2 ==='') {
-                this.setState({
-                    message: 'Please fill in all the fields'
-                })
-            } else if (this.state.password1!==this.state.password2){
+            if (this.state.password1!==this.state.password2){
                 this.setState({
                     message: 'Passwords do not match'
                 })
@@ -109,6 +107,7 @@ export class Activate extends Component {
                                         type="password" 
                                         validate 
                                         onChange={this.handleChange}
+                                        id='password1'
                                         value={this.password1}
                                     />
                                     <MDBInput 
@@ -117,6 +116,7 @@ export class Activate extends Component {
                                         group 
                                         type="password" 
                                         validate 
+                                        id='password2'
                                         onChange={this.handleChange}
                                         value={this.password2}
                                     />
