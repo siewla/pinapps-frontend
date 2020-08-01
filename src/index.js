@@ -15,6 +15,7 @@ import Activate from './screens/Activate'
 import Login from './screens/Login'
 import Forget from './screens/Forget'
 import Reset from './screens/Reset'
+import ShowAll from './components/ShowAll';
 
 ReactDOM.render(
     <div>
@@ -22,6 +23,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
           <Route path ='/' exact render={props => <App {...props} />}/>
+          <Route path ='/apps' exact render ={props => <ShowAll {...props} />} />
           <Route path ='/users/register' exact render={props => <Register {...props} />}/>
           <Route path ='/users/login' exact render={props => <Login {...props} />}/>
           <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
