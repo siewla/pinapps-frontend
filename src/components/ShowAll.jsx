@@ -10,7 +10,7 @@ export class ShowAll extends Component {
             {
                 name: "AppOne",
                 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                url: "www.app.com",
+                url: "https://www.google.com/",
                 screenshot: "https://images.unsplash.com/photo-1568144628871-ccbb00fc297c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
                 category: "one",
                 _id: "1234"
@@ -18,7 +18,7 @@ export class ShowAll extends Component {
             {
                 name: "AppTwo",
                 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                url: "www.app.com",
+                url: "https://www.google.com/",
                 screenshot: "https://images.unsplash.com/photo-1568144628871-ccbb00fc297c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
                 category: "one",
                 _id: "123455"
@@ -26,7 +26,7 @@ export class ShowAll extends Component {
             {
                 name: "AppThree",
                 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                url: "www.app.com",
+                url: "https://www.google.com/",
                 screenshot: "https://images.unsplash.com/photo-1568144628871-ccbb00fc297c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
                 category: "one",
                 _id: "1234w4"
@@ -34,7 +34,7 @@ export class ShowAll extends Component {
             {
                 name: "AppFour",
                 description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                url: "www.app.com",
+                url: "https://www.google.com/",
                 screenshot: "https://images.unsplash.com/photo-1568144628871-ccbb00fc297c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
                 category: "one",
                 _id: "123434"
