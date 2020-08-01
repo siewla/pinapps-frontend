@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import { set } from 'js-cookie'
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 const Forget = () => {
     const [formData, setFormData] = useState({
@@ -47,21 +48,35 @@ const Forget = () => {
     return (
         <div>
             <div>
-                <h1>Forget Password</h1>
-                <h2>{message}</h2>
-                <form onSubmit={handleSubmit}>
-                    <input 
-                        type="text" 
-                        placeholder="email"
-                        onChange={handleChange('email')}
-                        value={email}
-                    />
-                    <button
-                        type="submit"
-                    >
-                        Reset Password
-                    </button>
-                </form>
+                <MDBContainer onSubmit={handleSubmit}>
+                    <MDBRow>
+                        <MDBCol>
+                            <MDBCard>
+                                <MDBCardBody>
+                                <form>
+                                    <p className="h5 text-center mb-4">Forgot Your Password?</p>
+                                    <p>{message}</p>
+                                    <div className="grey-text">
+                                    <MDBInput 
+                                        label="Type your email" 
+                                        icon="envelope" group 
+                                        type="email" 
+                                        validate 
+                                        error="wrong"
+                                        success="right" 
+                                        onChange={handleChange('email')}
+                                        value={email}
+                                    />
+                                    </div>
+                                    <div className="text-center">
+                                    <MDBBtn type="submit">Reset Password</MDBBtn>
+                                    </div>
+                                </form>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer>
             </div>
         </div>
     )
