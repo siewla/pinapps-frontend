@@ -19,7 +19,7 @@ const Googlelogin = () => {
         })
         .then(res =>{
             authenticate(res, ()=>{
-                console.log('success')
+                console.log(res)
             })
             // setLogin({
             //         isLogin: true
