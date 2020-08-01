@@ -1,9 +1,7 @@
-import React, {useState, Component} from 'react'
-import { authenticate, isAuth } from '../helpers/auth'
+import React, { Component } from 'react'
+import { authenticate } from '../helpers/auth'
 import axios from 'axios'
 import { GoogleLogin } from 'react-google-login'
-import { Redirect } from 'react-router-dom'
-import { MDBBtn } from 'mdbreact';
 
 class Googlelogin extends Component{
     constructor(props) {
