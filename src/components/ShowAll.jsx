@@ -49,9 +49,9 @@ export class ShowAll extends Component {
         this.setState({apps:results})
     }
 
-    // componentDidMount (){
-    //     this.fetchApps()
-    // }
+    componentDidMount (){
+        this.fetchApps()
+    }
 
     render() {
         return (
