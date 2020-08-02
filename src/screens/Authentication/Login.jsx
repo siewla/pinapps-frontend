@@ -36,10 +36,9 @@ const Login = () => {
                                 ...formData,
                                 email:'',
                                 password1:'',
+                            })
                         })
-                        
-                        })
-                })
+                    })
                     .catch(err =>{
                         setMessage({
                             message: 'Email doesn\'t exist or wrong password'

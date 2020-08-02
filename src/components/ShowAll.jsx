@@ -44,8 +44,11 @@ export class ShowAll extends Component {
     }
 
     fetchApps = async () => {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/all}`)
+        console.log('Fetching Apps')
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/all`)
+        console.log(response)
         const results = await response.json ();
+        console.log('Apps Fetched:', results)
         this.setState({apps:results})
     }
 
