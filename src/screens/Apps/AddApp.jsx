@@ -4,9 +4,8 @@ class Form extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            products,
             name:'',
-            price: 0,
+            url: 'https://',
             description: 'Describe this item'
         }
     }

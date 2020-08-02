@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { authenticate } from '../helpers/auth'
+import { authenticate } from '../../helpers/auth'
 import axios from 'axios'
 import { GoogleLogin } from 'react-google-login'
 

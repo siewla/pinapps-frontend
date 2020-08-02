@@ -15,7 +15,7 @@ import Activate from './screens/Authentication/Activate'
 import Login from './screens/Authentication/Login'
 import Forget from './screens/Authentication/Forget'
 import Reset from './screens/Authentication/Reset'
-import ShowAll from './components/Authentication/ShowAll';
+import ShowAll from './components/ShowAll';
 
 ReactDOM.render(
     <div>
