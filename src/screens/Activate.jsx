@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken'
 import axios from 'axios'
+import { MDBBtn } from 'mdbreact';
 
-export class Activatenew extends Component {
+
+export class Activate extends Component {
     constructor (props){
         super (props);
         this.state = {
@@ -40,7 +42,7 @@ export class Activatenew extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/activation/`,{
+        axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/activation/`,{
             token:this.state.token
         }).then(res =>{
             this.setState({
@@ -57,10 +59,10 @@ export class Activatenew extends Component {
     render() {
         return (
             <div>
-                <h1>Welcome {this.state.name}</h1>
+                <h1>{this.state.name}</h1>
                 <h2>{this.state.message}</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <button type="submit">Activate Your Account</button>
+                    <MDBBtn type="submit" color="primary">Activate Your Account</MDBBtn>
                 </form>
                 <a href ='/register'><span>Not Registered?</span></a>
             </div>
@@ -68,4 +70,4 @@ export class Activatenew extends Component {
     }
 }
 
-export default Activatenew
+export default Activate

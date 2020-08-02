@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import jwt from 'jsonwebtoken';
 import axios from 'axios'
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 export class Activate extends Component {
     constructor (props){
@@ -51,7 +52,7 @@ export class Activate extends Component {
         if ((this.state.password1 === this.state.password2) && this.state.password1 && this.state.password2){
             axios({
                 method: 'PUT',
-                url: `${process.env.REACT_APP_BACKEND_API_URL}/password/reset`,
+                url: `${process.env.REACT_APP_BACKEND_API_URL}/auth/password/reset`,
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json;charset=UTF-8'
@@ -62,6 +63,7 @@ export class Activate extends Component {
                 }
             })
                 .then(response => {
+                    console.log(response)
                     this.setState({
                         password1: '',
                         password2:'',
@@ -69,16 +71,13 @@ export class Activate extends Component {
                     })
                 })
                 .catch(error => {
+                    console.log(error)
                     this.setState({
                         message: 'Reset Token Activated Before'
                     })
                 })   
         }else{
-            if(this.state.password1 ==='' || this.state.password2 ==='') {
-                this.setState({
-                    message: 'Please fill in all the fields'
-                })
-            } else if (this.state.password1!==this.state.password2){
+            if (this.state.password1!==this.state.password2){
                 this.setState({
                     message: 'Passwords do not match'
                 })
@@ -92,26 +91,45 @@ export class Activate extends Component {
     render() {
         return (
             <div>
-                <h1>Welcome {this.state.name}</h1>
-                <h2>{this.state.message}</h2>
-                <form onSubmit={this.handleSubmit}>
-                <input 
-                        type="password" 
-                        id = "password1"
-                        placeholder="password"
-                        onChange={this.handleChange}
-                        value={this.password1}
-                    />
-                    <input 
-                        type="password" 
-                        id = "password2"
-                        placeholder="confirm password"
-                        onChange={this.handleChange}
-                        value={this.password2}
-                    />
-                    <button type="submit">Reset Password</button>
-                </form>
-                <a href ='/register'><span>Not Registered?</span></a>
+                <MDBContainer onSubmit={this.handleSubmit}>
+                    <MDBRow>
+                        <MDBCol>
+                            <MDBCard>
+                                <MDBCardBody>
+                                <form>
+                                    <p className="h5 text-center mb-4">Reset Password</p>
+                                    <p>{this.state.message}</p>
+                                    <div className="grey-text">
+                                    <MDBInput 
+                                        label="Type your password" 
+                                        icon="lock" 
+                                        group 
+                                        type="password" 
+                                        validate 
+                                        onChange={this.handleChange}
+                                        id='password1'
+                                        value={this.password1}
+                                    />
+                                    <MDBInput 
+                                        label="Confirm your password" 
+                                        icon="lock" 
+                                        group 
+                                        type="password" 
+                                        validate 
+                                        id='password2'
+                                        onChange={this.handleChange}
+                                        value={this.password2}
+                                    />
+                                    </div>
+                                    <div className="text-center">
+                                    <MDBBtn type="submit">Reset Password</MDBBtn>
+                                    </div>
+                                </form>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer> 
             </div>
         )
     }
