@@ -10,12 +10,12 @@ import 'mdbreact/dist/css/mdb.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-import Register from './screens/Register'
-import Activate from './screens/Activate'
-import Login from './screens/Login'
-import Forget from './screens/Forget'
-import Reset from './screens/Reset'
-import ShowAll from './components/ShowAll';
+import Register from './screens/Authentication/Register'
+import Activate from './screens/Authentication/Activate'
+import Login from './screens/Authentication/Login'
+import Forget from './screens/Authentication/Forget'
+import Reset from './screens/Authentication/Reset'
+import ShowAll from './components/Authentication/ShowAll';
 
 ReactDOM.render(
     <div>
