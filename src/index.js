@@ -16,6 +16,7 @@ import Login from './screens/Authentication/Login'
 import Forget from './screens/Authentication/Forget'
 import Reset from './screens/Authentication/Reset'
 import ShowAll from './components/ShowAll';
+import AddApp from './screens/Apps/AddApp';
 
 ReactDOM.render(
     <div>
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Switch>
           <Route path ='/' exact render={props => <App {...props} />}/>
           <Route path ='/apps' exact render ={props => <ShowAll {...props} />} />
+          <Route path ='/apps/new' exact render ={props => <AddApp {...props} />} />
           <Route path ='/users/register' exact render={props => <Register {...props} />}/>
           <Route path ='/users/login' exact render={props => <Login {...props} />}/>
           <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
