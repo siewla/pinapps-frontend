@@ -21,7 +21,7 @@ const AddApp = () => {
     useEffect(() => {
         const getCategoryData = async () => {
             console.log('getting category data')
-            const allCategories = await (await axios.get(`${REACT_APP_BACKEND_API_URL}/categories/all`)).data
+            const allCategories = await (await axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/categories/all`)).data
             console.log('call result',allCategories)
             setCategories({allCategories}) 
         }
@@ -43,7 +43,7 @@ const AddApp = () => {
     const handleSubmit = event =>{
         event.preventDefault()
         if(name && url && description){
-                axios.post(`${REACT_APP_BACKEND_API_URL}/apps/new`,{
+                axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/apps/new`,{
                     name, url, description, category
                 })
                     .then(res =>{
