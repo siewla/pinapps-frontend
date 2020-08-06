@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, Switch } from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import App from './App';
 
 import '@fortawesome/fontawesome-free/css/all.min.css'; 
@@ -20,8 +20,8 @@ import AddApp from './screens/Apps/AddApp';
 
 ReactDOM.render(
     <div>
-      <Header />
-      <BrowserRouter>
+      <Router>
+        <Header />
         <Switch>
           <Route path ='/' exact render={props => <App {...props} />}/>
           {/* <Route path ='/apps' exact render ={props => <ShowAll {...props} />} /> */}
@@ -31,9 +31,9 @@ ReactDOM.render(
           <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
           <Route path ='/users/password/forget' exact render={props => <Forget {...props} />}/>
           <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
-        </Switch>
-      </BrowserRouter>
-      <Footer />
+        </Switch> 
+        <Footer />
+      </Router>
     </div>
     ,
   document.getElementById('root')
