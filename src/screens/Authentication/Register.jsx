@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { authenticate, isAuth } from '../../helpers/auth'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import Googlelogin from '../Authentication/Googlelogin'
 
 
 const Register = () => {
@@ -66,8 +65,8 @@ const Register = () => {
     }
     return (
         <div>
-            {isAuth()? <Redirect to ='/'/>: null}
-            <div>
+            <Googlelogin />
+            <div className = "margin-container">
                 <MDBContainer onSubmit={handleSubmit}>
                     <MDBRow>
                         <MDBCol>
@@ -129,7 +128,6 @@ const Register = () => {
                         </MDBCol>
                     </MDBRow>
                     </MDBContainer>
-                    
             </div>
         </div>
     )

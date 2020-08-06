@@ -6,3 +6,7 @@
     justify-content: space-evenly;
     padding: 5vh;
 }
+
+.margin-container{
+    margin: 2vh;
+}
