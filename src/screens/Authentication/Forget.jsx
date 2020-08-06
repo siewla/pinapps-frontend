@@ -48,7 +48,7 @@ const Forget = () => {
     return (
         <div>
             <div>
-                <MDBContainer onSubmit={handleSubmit}>
+                <MDBContainer onSubmit={handleSubmit} className="margin-container">
                     <MDBRow>
                         <MDBCol>
                             <MDBCard>
@@ -69,7 +69,7 @@ const Forget = () => {
                                     />
                                     </div>
                                     <div className="text-center">
-                                    <MDBBtn type="submit">Reset Password</MDBBtn>
+                                    <MDBBtn color="red" type="submit">Reset Password</MDBBtn>
                                     </div>
                                 </form>
                                 </MDBCardBody>

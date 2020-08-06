@@ -12,7 +12,7 @@ import About from './screens/notLogin/About'
 
 import Register from './screens/Authentication/Register'
 import Activate from './screens/Authentication/Activate'
-import Login from './screens/Authentication/Login'
+import NotLogin from './screens/notLogin/NotLogin'
 import Forget from './screens/Authentication/Forget'
 import Reset from './screens/Authentication/Reset'
 import ShowAll from './components/ShowAll';
@@ -33,9 +33,8 @@ ReactDOM.render(
           <Route path ='/apps' exact render ={props => <ShowAll {...props} />} />
           <Route path ='/apps/new' exact render ={props => <AddApp {...props} />} />
           <Route path ='/users/register' exact render={props => <Register {...props} />}/>
-          <Route path ='/users/login' exact render={props => <Login {...props} />}/>
+          <Route path ='/users/login' exact render={props => <NotLogin {...props} />}/>
           <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
-          <Route path ='/users/password/forget' exact render={props => <Forget {...props} />}/>
           <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
         </Switch> 
         <Footer />
