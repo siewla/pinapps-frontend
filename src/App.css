@@ -1,3 +1,20 @@
+@font-face{
+    font-family: bebas_neue;
+    src: url('./fonts/BebasNeue.otf')
+}
+
+.app-title{
+    font-family: bebas_neue;
+    color:red;
+    font-size: 5vh;
+}
+
+.navitem-title{
+    font-family: bebas_neue;
+    color:white;
+    font-size: 3vh;
+}
+
 .main-container-not-login{
     display: flex;
     flex-direction: row;
@@ -9,4 +26,48 @@
 
 .margin-container{
     margin: 2vh;
+}
+
+.category-heading{
+    text-align: center;
+    color:red;
+    font-family: bebas_neue;
+    margin-top:2vh;
+}
+
+.horizontal-apps-container{
+    margin: auto;
+    width: 90%;
+    min-height: 40vh;
+    /* border: 1px solid black; */
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.horizontal-app-card{
+    position: relative;
+    display: block;
+    transition: transform 500ms;
+    background-color:white;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    margin: 2vh;
+    border-radius: 1vh;
+}
+
+.horizontal-apps-container .horizontal-app-card:focus,
+.horizontal-apps-container .horizontal-app-card:hover{
+    transform: scale(1.5);
+    z-index: 1;
+}
+
+.horizontal-app-image{
+    margin: 2vh;
+    max-width: 40vh;
+    /* border: 1px solid red */
+}
+
+.footer-css{
+    font-family: bebas_neue;
+    color:white;
+    font-size: 2vh;
 }

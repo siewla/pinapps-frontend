@@ -53,6 +53,7 @@ const Login = () => {
     }
     return (
         <div>
+            {isAuth()? <Redirect to ='/'/>: null}
             <Googlelogin />
             <MDBContainer onSubmit={handleSubmit} className="margin-container">
                 <MDBRow>

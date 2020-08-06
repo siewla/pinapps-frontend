@@ -14,7 +14,7 @@ export class HeaderNotLogin extends Component {
         return (
             <MDBNavbar color="black" dark expand="md">
                 <MDBNavbarBrand>
-                    <strong className="white-text">PinApps</strong>
+                    <strong className="app-title">PinApps</strong>
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick={this.toggleCollapse} />
                 <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
@@ -22,22 +22,22 @@ export class HeaderNotLogin extends Component {
                     </MDBNavbarNav>
                     <MDBNavbarNav right>
                         <MDBNavItem>
-                            <MDBNavLink className="waves-effect waves-light" to="/">
+                            <MDBNavLink className="navitem-title" to="/">
                                 Home
                             </MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
-                            <MDBNavLink className="waves-effect waves-light" to="/about">
+                            <MDBNavLink className="navitem-title"to="/about">
                                 About
                             </MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
-                            <MDBNavLink className="waves-effect waves-light" to="/users/register">
+                            <MDBNavLink className="navitem-title" to="/users/register">
                                 Get Started
                             </MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
-                            <MDBNavLink className="waves-effect waves-light" to="/users/login">
+                            <MDBNavLink className="navitem-title" to="/users/login">
                                 Login
                             </MDBNavLink>
                         </MDBNavItem>
