@@ -18,7 +18,7 @@ export class Activate extends Component {
         // console.log(this.state)
         let token = this.props.match.params.token;
         // console.log(token)
-        jwt.verify(token, 'pinappsprojectActivation2020', (err)=>{
+        jwt.verify(token, process.env.REACT_APP_JWT_ACCOUNT_ACTIVATION , (err)=>{
             if (err){
                 if(err.message === "jwt expired"){
                     this.setState({
