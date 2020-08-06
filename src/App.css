@@ -3,14 +3,16 @@
     src: url('./fonts/BebasNeue.otf')
 }
 
-.app-title{
+* {
     font-family: bebas_neue;
+}
+
+.app-title{
     color:red;
     font-size: 5vh;
 }
 
 .navitem-title{
-    font-family: bebas_neue;
     color:white;
     font-size: 3vh;
 }
@@ -31,7 +33,6 @@
 .category-heading{
     text-align: center;
     color:red;
-    font-family: bebas_neue;
     margin-top:2vh;
 }
 
@@ -67,7 +68,11 @@
 }
 
 .footer-css{
-    font-family: bebas_neue;
     color:white;
     font-size: 2vh;
+}
+
+.float-right{
+    float: right;
+    margin-right: 5vh;
 }

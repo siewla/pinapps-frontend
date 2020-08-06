@@ -85,7 +85,7 @@ const Login = () => {
                                 />
                                 </div>
                                 <div className="text-center">
-                                <MDBBtn type="submit">Login</MDBBtn>
+                                <MDBBtn color="red" type="submit">Login</MDBBtn>
                                 </div>
                             </form>
                             </MDBCardBody>

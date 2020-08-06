@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { isAuth, logout } from '../../helpers/auth';
-import { Redirect } from 'react-router-dom';
+import { logout } from '../../helpers/auth';
 import { MDBBtn } from 'mdbreact';
+
 
 export class Main extends Component {
     handleLogout = () =>{

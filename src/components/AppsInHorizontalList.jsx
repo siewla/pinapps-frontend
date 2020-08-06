@@ -22,12 +22,12 @@ export class AppsInHorizontalList extends Component {
     }
 
     render() {
-        console.log(this.state.apps)
+        // console.log(this.state.apps)
         if (this.state.apps!==null){
             return(
                 <div className="horizontal-apps-container">
                     {this.state.apps.map(app=>
-                    <div className="horizontal-app-card">
+                    <div key={app._id} className="horizontal-app-card">
                         <img className="horizontal-app-image" src={app.screenshot} key={app._id} alt={app.name}></img> 
 
                     </div>

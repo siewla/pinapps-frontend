@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AppsInHorizontalList from '../../components/AppsInHorizontalList'
+
 export class Main extends Component {
     constructor (props){
         super (props);
