@@ -3,6 +3,7 @@ import { authenticate, isAuth } from '../../helpers/auth'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import Googlelogin from './Googlelogin'
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -52,47 +53,45 @@ const Login = () => {
     }
     return (
         <div>
-            {isAuth()? <Redirect to ='/'/>: null}
-            <div>
-                <MDBContainer onSubmit={handleSubmit}>
-                    <MDBRow>
-                        <MDBCol>
-                            <MDBCard>
-                                <MDBCardBody>
-                                <form>
-                                    <p className="h5 text-center mb-4">Sign in</p>
-                                    <p>{message}</p>
-                                    <div className="grey-text">
-                                    <MDBInput 
-                                        label="Type your email" 
-                                        icon="envelope" group 
-                                        type="email" 
-                                        validate 
-                                        error="wrong"
-                                        success="right" 
-                                        onChange={handleChange('email')}
-                                        value={email}
-                                    />
-                                    <MDBInput 
-                                        label="Type your password" 
-                                        icon="lock" 
-                                        group 
-                                        type="password" 
-                                        validate 
-                                        onChange={handleChange('password1')}
-                                        value={password1}
-                                    />
-                                    </div>
-                                    <div className="text-center">
-                                    <MDBBtn type="submit">Login</MDBBtn>
-                                    </div>
-                                </form>
-                                </MDBCardBody>
-                            </MDBCard>
-                        </MDBCol>
-                    </MDBRow>
-                </MDBContainer>  
-            </div>
+            <Googlelogin />
+            <MDBContainer onSubmit={handleSubmit} className="margin-container">
+                <MDBRow>
+                    <MDBCol>
+                        <MDBCard>
+                            <MDBCardBody>
+                            <form>
+                                <p className="h5 text-center mb-4">Sign in</p>
+                                <p>{message}</p>
+                                <div className="grey-text">
+                                <MDBInput 
+                                    label="Type your email" 
+                                    icon="envelope" group 
+                                    type="email" 
+                                    validate 
+                                    error="wrong"
+                                    success="right" 
+                                    onChange={handleChange('email')}
+                                    value={email}
+                                />
+                                <MDBInput 
+                                    label="Type your password" 
+                                    icon="lock" 
+                                    group 
+                                    type="password" 
+                                    validate 
+                                    onChange={handleChange('password1')}
+                                    value={password1}
+                                />
+                                </div>
+                                <div className="text-center">
+                                <MDBBtn type="submit">Login</MDBBtn>
+                                </div>
+                            </form>
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer> 
         </div>
     )
 }
