@@ -28,8 +28,8 @@ class AppCard extends Component {
                         <MDBCardText>
                             {this.props.description}
                         </MDBCardText>
-                        <MDBBtn href={this.props.url} target="_blank">Link</MDBBtn>
-                        <MDBBtn onClick={this.toggle}>View Comment</MDBBtn>
+                        <MDBBtn color="red" href={this.props.url} target="_blank">Link</MDBBtn>
+                        <MDBBtn color="red" onClick={this.toggle}>Details</MDBBtn>
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>
@@ -40,7 +40,7 @@ class AppCard extends Component {
                     <h3>All comments</h3>
                 </MDBModalBody>
                 <MDBModalFooter>
-                    <MDBBtn color="secondary" onClick={this.toggle}>Close</MDBBtn>
+                    <MDBBtn color="red" onClick={this.toggle}>Close</MDBBtn>
                 </MDBModalFooter>
                 </MDBModal>
             </MDBContainer>

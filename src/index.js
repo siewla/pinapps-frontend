@@ -18,6 +18,7 @@ import ShowAll from './components/ShowAll';
 import AddApp from './screens/Apps/AddApp';
 
 import AppsByCategory from './screens/notLogin/AppsByCategory'
+import MyApps from './screens/isLogin/MyApps'
 
 import HeaderLogin from '../src/screens/isLogin/HeaderLogin';
 import HeaderNotLogin from '../src/screens/notLogin/HeaderNotLogin';
@@ -38,6 +39,7 @@ ReactDOM.render(
           <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
           <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
           <Route path ='/apps/category/:categoryName' exact render={props => <AppsByCategory {...props} />}/>  
+          <Route path ='/myapps' exact render={props => <MyApps {...props} />}/>  
         </Switch> 
         <Footer />
       </Router>

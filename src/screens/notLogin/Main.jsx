@@ -34,7 +34,7 @@ export class Main extends Component {
 
     render() {
         return (
-            <div>
+            <div className="main-container">
                 {this.state.categories.map(category=>
                 
                 <div key={category._id}>

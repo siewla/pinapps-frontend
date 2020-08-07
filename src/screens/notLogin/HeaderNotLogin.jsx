@@ -14,7 +14,7 @@ export class HeaderNotLogin extends Component {
         return (
             <MDBNavbar color="black" dark expand="md">
                 <MDBNavbarBrand>
-                    <strong className="app-title">PinApps</strong>
+                    <a href='/'><strong className="app-title">PinApps</strong></a>
                 </MDBNavbarBrand>
                 <MDBNavbarToggler onClick={this.toggleCollapse} />
                 <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
