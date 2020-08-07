@@ -40,9 +40,11 @@
     margin: auto;
     width: 90%;
     min-height: 40vh;
-    /* border: 1px solid black; */
     display:flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    /* overflow-y: visible; */
+    /* overflow-x: auto; */
+    
 }
 
 .horizontal-app-card{
@@ -53,10 +55,12 @@
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     margin: 2vh;
     border-radius: 1vh;
+    overflow: visible;
 }
 
 .horizontal-apps-container .horizontal-app-card:focus,
 .horizontal-apps-container .horizontal-app-card:hover{
+    display:block;
     transform: scale(1.5);
     z-index: 1;
 }
