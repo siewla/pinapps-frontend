@@ -20,9 +20,9 @@ const AddApp = () => {
 
     useEffect(() => {
         const getCategoryData = async () => {
-            console.log('getting category data')
+            // console.log('getting category data')
             const allCategories = await (await axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/categories/all`)).data
-            console.log('call result',allCategories)
+            // console.log('call result',allCategories)
             setCategories({allCategories}) 
         }
         getCategoryData()
@@ -47,6 +47,7 @@ const AddApp = () => {
                     name, url, description, category
                 })
                     .then(res =>{
+                        // console.log(res)
                         setFormData({
                             ...formData,
                             name:'',
@@ -109,7 +110,7 @@ const AddApp = () => {
                                     
                                     <option>Category of App</option>
                                     {categoryData.allCategories.map(category => {
-                                        console.log(category)
+                                        // console.log(category)
                                         return <option value={category.value} key={category._id}>{category.name}</option>
                                     })}
                                 </select>

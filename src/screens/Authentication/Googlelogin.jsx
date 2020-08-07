@@ -41,7 +41,7 @@ class Googlelogin extends Component{
         return (
             <div>
                 <p>{this.message}</p>
-                <GoogleLogin className="float-right"
+                <GoogleLogin className="float-right margin-container"
                         clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
                         onSuccess={ this.responseGoogle }
                         onFailure={ this.responseGoogle }

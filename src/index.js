@@ -13,10 +13,11 @@ import About from './screens/notLogin/About'
 import Register from './screens/Authentication/Register'
 import Activate from './screens/Authentication/Activate'
 import NotLogin from './screens/notLogin/NotLogin'
-import Forget from './screens/Authentication/Forget'
 import Reset from './screens/Authentication/Reset'
 import ShowAll from './components/ShowAll';
 import AddApp from './screens/Apps/AddApp';
+
+import AppsByCategory from './screens/notLogin/AppsByCategory'
 
 import HeaderLogin from '../src/screens/isLogin/HeaderLogin';
 import HeaderNotLogin from '../src/screens/notLogin/HeaderNotLogin';
@@ -36,6 +37,7 @@ ReactDOM.render(
           <Route path ='/users/login' exact render={props => <NotLogin {...props} />}/>
           <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
           <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
+          <Route path ='/apps/category/:categoryName' exact render={props => <AppsByCategory {...props} />}/>  
         </Switch> 
         <Footer />
       </Router>

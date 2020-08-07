@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import AppsInHorizontalList from '../../components/AppsInHorizontalList'
+import { Redirect } from 'react-router-dom';
 
 export class Main extends Component {
     constructor (props){
         super (props);
         this.state = {
-            categories:[]
+            categories:[],
+            redirect: false
         }
     }
 
@@ -19,13 +21,24 @@ export class Main extends Component {
         this.fetchCategories()
     }
 
+    // redirectHandler = () =>{
+    //     this.setState({ redirect: true })
+    //     this.renderRedirect()
+    // }
+
+    // renderRedirect = () =>{
+    //     if (this.state.redirect){
+    //         return <Redirect to ='/apps/new' />
+    //     }
+    // }
+
     render() {
         return (
             <div>
                 {this.state.categories.map(category=>
+                
                 <div key={category._id}>
-                    <h1 className="category-heading">{category.name}</h1>   
-                    {/* <h2>Description : {category.description}</h2> */}
+                    <a href={'/apps/category/'+category.name}><h1 className="category-heading">{category.name}</h1></a>
                     <AppsInHorizontalList 
                         key={category.value}
                         categoryID={category._id}
