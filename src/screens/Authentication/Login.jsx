@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { authenticate, isAuth } from '../../helpers/auth'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
-import Googlelogin from './Googlelogin'
 
 const Login = () => {
     const [formData, setFormData] = useState({
@@ -53,7 +51,6 @@ const Login = () => {
     }
     return (
         <div>
-            <Googlelogin />
             <MDBContainer onSubmit={handleSubmit} className="margin-container">
                 <MDBRow>
                     <MDBCol>
@@ -84,7 +81,7 @@ const Login = () => {
                                 />
                                 </div>
                                 <div className="text-center">
-                                <MDBBtn type="submit">Login</MDBBtn>
+                                <MDBBtn color="red" type="submit">Login</MDBBtn>
                                 </div>
                             </form>
                             </MDBCardBody>

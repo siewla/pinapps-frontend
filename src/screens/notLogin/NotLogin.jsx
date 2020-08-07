@@ -12,7 +12,6 @@ export class NotLogin extends Component {
             <div className="main-container-not-login">
                 <Googlelogin />
                 <Login />
-                <Register />
                 <Forget />
             </div>
         )

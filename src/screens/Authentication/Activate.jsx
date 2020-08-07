@@ -58,13 +58,13 @@ export class Activate extends Component {
 
     render() {
         return (
-            <div>
+            <div className="middle-container">
                 <h1>{this.state.name}</h1>
                 <h2>{this.state.message}</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <MDBBtn type="submit" color="primary">Activate Your Account</MDBBtn>
+                    <MDBBtn type="submit" color="red">Activate Your Account</MDBBtn>
                 </form>
-                <a href ='/register'><span>Not Registered?</span></a>
+                <a href ='/users/register'><span>Not Registered?</span></a>
             </div>
         )
     }

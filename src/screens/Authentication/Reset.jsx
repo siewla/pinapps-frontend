@@ -91,7 +91,7 @@ export class Activate extends Component {
     render() {
         return (
             <div>
-                <MDBContainer onSubmit={this.handleSubmit}>
+                <MDBContainer onSubmit={this.handleSubmit} className="margin-container">
                     <MDBRow>
                         <MDBCol>
                             <MDBCard>
@@ -122,7 +122,7 @@ export class Activate extends Component {
                                     />
                                     </div>
                                     <div className="text-center">
-                                    <MDBBtn type="submit">Reset Password</MDBBtn>
+                                    <MDBBtn color="red" type="submit">Reset Password</MDBBtn>
                                     </div>
                                 </form>
                                 </MDBCardBody>
