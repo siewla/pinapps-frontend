@@ -30,6 +30,9 @@ class AppCard extends Component {
                         </MDBCardText>
                         <MDBBtn color="red" href={this.props.url} target="_blank">Link</MDBBtn>
                         <MDBBtn color="red" onClick={this.toggle}>Details</MDBBtn>
+                        <div className="favorite-button">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>
