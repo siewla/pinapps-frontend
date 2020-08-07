@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react'
 import PrivateMainpage from './screens/isLogin/Main'
 import PublicMainpage from './screens/notLogin/Main'
-import { authenticate, isAuth } from './helpers/auth'
+import { authenticate, isAuth } from './helpers/auth.services'
 
 import './App.css';
 
-function App() {
-  return (
-    <div>
-      {isAuth()? 
+export class App extends Component {
+  componentDidMount (){
+    isAuth();
+  }
+
+  render() {
+    return (
+      <div>
+        {isAuth()? 
       <PrivateMainpage />
       : <PublicMainpage />}
-    </div>
-  );
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App

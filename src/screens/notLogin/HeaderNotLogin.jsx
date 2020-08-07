@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse } from "mdbreact";
+import { isAuth, logout } from '../../helpers/auth.services'
 
 export class HeaderNotLogin extends Component {
     state = {
@@ -9,6 +10,11 @@ export class HeaderNotLogin extends Component {
     toggleCollapse = () => {
         this.setState({ isOpen: !this.state.isOpen });
     }
+
+    componentDidMount (){
+        isAuth();
+    }
+
 
     render() {
         return (

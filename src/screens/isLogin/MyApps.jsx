@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { isAuth } from '../../helpers/auth'
-import { Redirect } from 'react-router-dom'
 
 export class MyApps extends Component {
     render() {

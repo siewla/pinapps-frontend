@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { authenticate, isAuth } from '../../helpers/auth'
+import { authenticate, isAuth } from '../../helpers/auth.services'
 import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 

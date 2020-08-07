@@ -22,7 +22,7 @@ import MyApps from './screens/isLogin/MyApps'
 
 import HeaderLogin from '../src/screens/isLogin/HeaderLogin';
 import HeaderNotLogin from '../src/screens/notLogin/HeaderNotLogin';
-import { isAuth } from '../src/helpers/auth'
+import { isAuth } from '../src/helpers/auth.services'
 
 ReactDOM.render(
     <div>

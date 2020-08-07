@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { authenticate } from '../../helpers/auth'
+import { authenticate } from '../../helpers/auth.services'
 import axios from 'axios'
 import { GoogleLogin } from 'react-google-login'
 
@@ -10,10 +10,7 @@ class Googlelogin extends Component{
             message:''
         }
     }
-    refreshPage=()=> {
-        window.location.reload(false);
-    }
-
+ 
     //send google token
     sendGoogleToken = tokenId => {
         axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/googlelogin`,{
@@ -21,7 +18,7 @@ class Googlelogin extends Component{
         })
         .then(res =>{
             authenticate(res, ()=>{
-                this.refreshPage();
+                console.log('successfully login')
             })
         })
         .catch(err =>{

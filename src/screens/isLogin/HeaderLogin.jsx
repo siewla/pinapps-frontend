@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBBtn} from "mdbreact";
-import { isAuth, logout } from '../../helpers/auth'
+import { isAuth, logout } from '../../helpers/auth.services'
 
 export class HeaderLogin extends Component {
     state = {
@@ -13,6 +13,10 @@ export class HeaderLogin extends Component {
 
     handleLogout = () =>{
         logout()
+    }
+
+    componentDidMount (){
+        isAuth();
     }
 
     render() {
