@@ -6,13 +6,13 @@ import pageNotFound from './components/pageNotFound'
 export default function Routes() {
     return (
         <Switch>
-        <Route exact path="/">
-            <Home />
-        </Route>
-        {/* Finally, catch all unmatched routes */}
-        <Route>
-            <pageNotFound />
-        </Route>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            {/* Finally, catch all unmatched routes */}
+            <Route>
+                <pageNotFound />
+            </Route>
         </Switch>
     );
 }
