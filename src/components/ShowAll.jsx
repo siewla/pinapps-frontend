@@ -26,7 +26,7 @@ export class ShowAll extends Component {
     render() {
         return (
             <div >
-                {/* <h1 className="category-heading">{this.props.categoryName}</h1> */}
+                <h1 className="category-heading">{this.props.categoryName}</h1>
                 <AppsList apps={this.state.apps} />
             </div>
         )

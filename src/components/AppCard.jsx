@@ -23,7 +23,7 @@ class AppCard extends Component {
             <MDBCol className="app-card">
                 <MDBCard style={{ width: "22rem" }}>
                     <MDBCardImage className="img-fluid" src={this.props.screenshot} waves />
-                    <MDBCardBody>
+                    <MDBCardBody className="card-body">
                         <MDBCardTitle>{this.props.name}</MDBCardTitle>
                         <MDBCardText>
                             {this.props.description}
