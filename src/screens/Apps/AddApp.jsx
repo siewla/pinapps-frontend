@@ -110,12 +110,7 @@ const AddApp = () => {
                                     
                                     <option>Category of App</option>
                                     {categoryData.allCategories.map(category => {
-<<<<<<< HEAD
-                                        // console.log(category)
-                                        return <option value={category.value} key={category._id}>{category.name}</option>
-=======
                                         return <option value={category._id} key={category._id}>{category.name}</option>
->>>>>>> 8f9e66c017b914296d6bc6aedecf6dc4a782c534
                                     })}
                                 </select>
                                 </div>

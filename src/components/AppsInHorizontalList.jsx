@@ -29,7 +29,6 @@ export class AppsInHorizontalList extends Component {
                     {this.state.apps.map(app=>
                     <div key={app._id} className="horizontal-app-card">
                         <img className="horizontal-app-image" src={app.screenshot} key={app._id} alt={app.name}></img> 
-
                     </div>
                 )}
                 </div>
