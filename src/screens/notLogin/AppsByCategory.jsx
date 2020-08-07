@@ -5,9 +5,8 @@ export class AppsByCategory extends Component {
     render() {
         return (
             <div>
-                <h1 className="category-heading">{this.props.match.params.categoryName}</h1>
                 <ShowAll 
-                    categoryName={this.props.match.params.categoryName}
+                    categoryID={this.props.match.params.categoryID}
                 />
             </div>
         )

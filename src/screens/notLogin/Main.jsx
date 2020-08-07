@@ -38,7 +38,7 @@ export class Main extends Component {
                 {this.state.categories.map(category=>
                 
                 <div key={category._id}>
-                    <a href={'/apps/category/'+category.name}><h1 className="category-heading">{category.name}</h1></a>
+                    <a href={'/apps/category/'+category._id}><h1 className="category-heading">{category.name}</h1></a>
                     <AppsInHorizontalList 
                         key={category.value}
                         categoryID={category._id}

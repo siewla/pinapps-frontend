@@ -4,40 +4,7 @@ export class AppsInHorizontalList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            apps:[
-            // {
-            //     name: "AppOne",
-            //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            //     url: "https://www.google.com/",
-            //     screenshot: "https://images.unsplash.com/photo-1568144628871-ccbb00fc297c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-            //     category: "one",
-            //     _id: "1234"
-            // },
-            // {
-            //     name: "AppTwo",
-            //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            //     url: "https://www.google.com/",
-            //     screenshot: "https://images.unsplash.com/photo-1568144628871-ccbb00fc297c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-            //     category: "one",
-            //     _id: "123455"
-            // },
-            // {
-            //     name: "AppThree",
-            //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            //     url: "https://www.google.com/",
-            //     screenshot: "https://images.unsplash.com/photo-1568144628871-ccbb00fc297c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-            //     category: "one",
-            //     _id: "1234w4"
-            // },
-            // {
-            //     name: "AppThree",
-            //     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-            //     url: "https://www.google.com/",
-            //     screenshot: "https://images.unsplash.com/photo-1568144628871-ccbb00fc297c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-            //     category: "one",
-            //     _id: "1234w4"
-            // },
-            ]
+            apps:[]
         }
     }
 

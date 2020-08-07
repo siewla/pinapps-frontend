@@ -38,7 +38,7 @@ ReactDOM.render(
           <Route path ='/users/login' exact render={props => <NotLogin {...props} />}/>
           <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
           <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
-          <Route path ='/apps/category/:categoryName' exact render={props => <AppsByCategory {...props} />}/>  
+          <Route path ='/apps/category/:categoryID' exact render={props => <AppsByCategory {...props} />}/>  
           <Route path ='/myapps' exact render={props => <MyApps {...props} />}/>  
         </Switch> 
         <Footer />
