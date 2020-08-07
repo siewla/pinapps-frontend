@@ -15,10 +15,6 @@ export class HeaderLogin extends Component {
         logout()
     }
 
-    componentDidMount (){
-        isAuth();
-    }
-
     render() {
         return (
             <MDBNavbar color="black" dark expand="md">
@@ -36,7 +32,7 @@ export class HeaderLogin extends Component {
                             </MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
-                            <MDBNavLink className="navitem-title" to="/user/apps">
+                            <MDBNavLink className="navitem-title" to="/myapps">
                                 My Apps
                             </MDBNavLink>
                         </MDBNavItem>

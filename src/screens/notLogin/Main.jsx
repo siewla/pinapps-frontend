@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import AppsInHorizontalList from '../../components/AppsInHorizontalList'
-import { Redirect } from 'react-router-dom';
 
 export class Main extends Component {
     constructor (props){
         super (props);
         this.state = {
             categories:[],
-            redirect: false
         }
     }
 
@@ -20,17 +18,6 @@ export class Main extends Component {
     componentDidMount (){
         this.fetchCategories()
     }
-
-    // redirectHandler = () =>{
-    //     this.setState({ redirect: true })
-    //     this.renderRedirect()
-    // }
-
-    // renderRedirect = () =>{
-    //     if (this.state.redirect){
-    //         return <Redirect to ='/apps/new' />
-    //     }
-    // }
 
     render() {
         return (

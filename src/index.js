@@ -29,6 +29,7 @@ ReactDOM.render(
       <Router>
         {isAuth()? 
                 <HeaderLogin /> : <HeaderNotLogin />}
+        <HeaderNotLogin />
         <Switch>
           <Route path ='/' exact render={props => <App {...props} />}/>
           <Route path ='/about' exact render={props => <About {...props} />}/>

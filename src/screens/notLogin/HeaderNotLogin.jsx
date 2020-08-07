@@ -11,11 +11,6 @@ export class HeaderNotLogin extends Component {
         this.setState({ isOpen: !this.state.isOpen });
     }
 
-    componentDidMount (){
-        isAuth();
-    }
-
-
     render() {
         return (
             <MDBNavbar color="black" dark expand="md">

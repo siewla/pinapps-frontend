@@ -63,7 +63,7 @@ export class Activate extends Component {
                 }
             })
                 .then(response => {
-                    console.log(response)
+                    // console.log(response)
                     this.setState({
                         password1: '',
                         password2:'',
@@ -71,7 +71,7 @@ export class Activate extends Component {
                     })
                 })
                 .catch(error => {
-                    console.log(error)
+                    // console.log(error)
                     this.setState({
                         message: 'Reset Token Activated Before'
                     })

@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
-import { set } from 'js-cookie'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 const Forget = () => {
@@ -42,7 +40,7 @@ const Forget = () => {
                 .catch(error => setMessage({message:'Invalid Email'}))
                 
         }else{
-                console.log('Please fill in all the fields')
+                // console.log('Please fill in all the fields')
         }
     }
     return (

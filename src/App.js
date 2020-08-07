@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PrivateMainpage from './screens/isLogin/Main'
 import PublicMainpage from './screens/notLogin/Main'
-import { authenticate, isAuth } from './helpers/auth.services'
+import { isAuth } from './helpers/auth.services'
 
 import './App.css';
 
