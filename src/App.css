@@ -100,4 +100,10 @@
 .card-body-black{
     background-color: black;
     color:white;
+    height:20vh;
+}
+
+.img-app-card{
+    width: 100%;
+    height: 40vh;
 }
