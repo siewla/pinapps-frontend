@@ -41,7 +41,7 @@ const AddApp = (props) => {
     const handleSubmit = event =>{
         event.preventDefault()
         if(name && url && description){
-            const userId = props.userId
+            const userId = JSON.parse(localStorage.getItem('user'));
                 axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/apps/new`,{
                     name, url, description, category, userId
                 })

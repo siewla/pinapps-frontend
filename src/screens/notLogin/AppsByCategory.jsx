@@ -20,6 +20,7 @@ export class AppsByCategory extends Component {
     }
 
     render() {
+        console.log("props of apps by cat", this.props)
         return (
             <div>
                 <ShowAll 

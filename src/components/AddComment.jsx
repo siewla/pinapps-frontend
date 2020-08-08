@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import Axios from 'axios';
-import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn } from 'mdbreact';
 
 export default function AddComment(props) {
     const [formData, setFormData] = useState({
         comment:'',
-        author: props.author,
+        author: JSON.parse(localStorage.getItem('user')), 
         app: props.app,
     });
 
@@ -26,7 +26,7 @@ export default function AddComment(props) {
         event.preventDefault()
         if(comment) {
             Axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/comments/new`, {
-                comment, author, app
+                ...formData, comment
             })
             .then(res => {
                 setFormData({
@@ -59,6 +59,7 @@ export default function AddComment(props) {
                                     <MDBInput label="Your Comment" group type='text' onChange={handleChange('comment')} value={comment}></MDBInput>
                                     </div>
                                 </form>
+                                <MDBBtn type='submit' color='red'>Submit Comment</MDBBtn>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
