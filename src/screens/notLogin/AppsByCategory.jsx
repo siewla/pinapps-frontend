@@ -38,6 +38,7 @@ export class AppsByCategory extends Component {
                 <ShowAll 
                     categoryID={this.props.match.params.categoryID}
                     categoryName={this.state.categoryName}
+                    isLogin ={this.props.isLogin}
                 />
             </div>
         )

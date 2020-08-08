@@ -26,7 +26,10 @@ export class ShowAll extends Component {
         return (
             <div >
                 <h1 className="category-heading">{this.props.categoryName}</h1>
-                <AppsList apps={this.state.apps}/>
+                <AppsList 
+                    apps={this.state.apps}
+                    isLogin={this.props.isLogin}
+                />
             </div>
         )
     }
