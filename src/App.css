@@ -127,3 +127,18 @@
     padding: 3vh;
     border-radius: 1vh;
 }
+
+@media only screen and (max-width: 1024px) {
+    .horizontal-apps-container{
+        width: 100%;
+        justify-content: flex-start;
+        overflow: auto;
+    }
+
+    .horizontal-apps-container .horizontal-app-card:focus,
+    .horizontal-apps-container .horizontal-app-card:hover{
+        display:block;
+        transform: scale(1);
+        z-index: 1;
+    }
+}
