@@ -70,7 +70,7 @@ const AddApp = () => {
 
     return (
         <div>
-            <MDBContainer onSubmit={handleSubmit} className="margin-container">
+            <MDBContainer onSubmit={handleSubmit}>
                 <MDBRow>
                     <MDBCol>
                         <MDBCard>
