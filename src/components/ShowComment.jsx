@@ -1,8 +1,8 @@
 import React from 'react'
-import { MDBCard, MDBCardHeader, MDBCardText, MDBCardFooter, MDBCardBody } from 'mdbreact'
 import { useState } from 'react'
 import { useEffect } from 'react';
 import Axios from 'axios';
+import Moment from 'react-moment';
 
 
 export default function ShowComment(props) {
@@ -16,18 +16,15 @@ export default function ShowComment(props) {
             setAuthor({authorName: author.name})
         };
         getAuthor();
-    },[])
+    },[props.author])
 
     return (
         <div>
-            <MDBCard>
-                <MDBCardBody>
-                    <MDBCardHeader>{authorName}</MDBCardHeader>
-                    <MDBCardText>{props.comment}</MDBCardText>
-                    <MDBCardFooter>{props.date}</MDBCardFooter>
-                </MDBCardBody>
-                
-            </MDBCard>
+            <div className="individual-comment-container">
+                <h6 className="comment-author">{authorName}</h6>
+                <h5 className="comment-text">{props.comment}</h5>
+                <h6 className="comment-footer"><Moment toNow>{props.date}</Moment></h6>
+            </div> 
         </div>
     )
 }

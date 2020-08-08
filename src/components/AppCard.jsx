@@ -41,12 +41,11 @@ class AppCard extends Component {
                 <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                 <MDBModalHeader toggle={this.toggle}>{this.props.name}</MDBModalHeader>
                 <MDBModalBody>
-                    <h3>All comments</h3>
-                    <AppComments appId={this.props.appId}></AppComments>
+                    {this.props.isLogin? 
+                    <div>
+                        <AppComments appId={this.props.appId} />
+                    </div> : <h1>NotLogin</h1>}
                 </MDBModalBody>
-                <MDBModalFooter>
-                    <MDBBtn color="red" onClick={this.toggle}>Close</MDBBtn>
-                </MDBModalFooter>
                 </MDBModal>
             </MDBContainer>
         </div>

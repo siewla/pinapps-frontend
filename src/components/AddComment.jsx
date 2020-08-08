@@ -2,12 +2,13 @@ import React from 'react'
 import { useState } from 'react'
 import Axios from 'axios';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn } from 'mdbreact';
+import CommentsContainer from './CommentsContainer'
 
 export default function AddComment(props) {
     const [formData, setFormData] = useState({
         comment:'',
         author: JSON.parse(localStorage.getItem('user'))._id, 
-        app: props.app,
+        app: props.appId,
     });
 
     const {comment} = formData;
@@ -23,7 +24,7 @@ export default function AddComment(props) {
     }
 
     const handleSubmit = event => {
-        console.log('submitting new comment')
+        // console.log('submitting new comment')
         event.preventDefault()
         if(comment) {
             Axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/comments/new`, {
@@ -32,7 +33,7 @@ export default function AddComment(props) {
             .then(res => {
                 setFormData({
                     ...formData,
-                    comment: ''
+                    comment: '',
                 })
             })
             .catch(err => {
@@ -54,14 +55,12 @@ export default function AddComment(props) {
                         <MDBCard>
                             <MDBCardBody>
                                 <form>
-                                <p className="h5 text-center mb-4">Comment on this App</p>
                                 <p className='red-text'>{message}</p>
                                 <div className="grey-text">
                                     <MDBInput label="Your Comment" group type='text' onChange={handleChange('comment')} value={comment}></MDBInput>
                                     </div>
                                     <MDBBtn type='submit' color='red'>Submit Comment</MDBBtn>
-                                </form>
-                                
+                                </form>  
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
