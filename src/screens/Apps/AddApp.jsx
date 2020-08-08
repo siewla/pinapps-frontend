@@ -15,8 +15,6 @@ const AddApp = (props) => {
     const [categoryData, setCategories] = useState({
         allCategories:[],
     });
-    
-    
 
     useEffect(() => {
         const getCategoryData = async () => {
