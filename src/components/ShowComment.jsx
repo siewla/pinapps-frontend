@@ -1,5 +1,5 @@
 import React from 'react'
-import { MDBCard, MDBCardHeader, MDBCardText, MDBCardFooter } from 'mdbreact'
+import { MDBCard, MDBCardHeader, MDBCardText, MDBCardFooter, MDBCardBody } from 'mdbreact'
 import { useState } from 'react'
 import { useEffect } from 'react';
 import Axios from 'axios';
@@ -12,7 +12,7 @@ export default function ShowComment(props) {
 
     useEffect(() => {
         const getAuthor = async () => {
-            const author = await (await Axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/comments/all/${props.author}`)).data;
+            const author = await (await Axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/users/user/${props.author}`)).data;
             setAuthor({authorName: author.name})
         };
         getAuthor();
@@ -21,9 +21,12 @@ export default function ShowComment(props) {
     return (
         <div>
             <MDBCard>
-                <MDBCardHeader>{authorName}</MDBCardHeader>
-                <MDBCardText>{this.props.comment}</MDBCardText>
-                <MDBCardFooter>{this.props.date}</MDBCardFooter>
+                <MDBCardBody>
+                    <MDBCardHeader>{authorName}</MDBCardHeader>
+                    <MDBCardText>{props.comment}</MDBCardText>
+                    <MDBCardFooter>{props.date}</MDBCardFooter>
+                </MDBCardBody>
+                
             </MDBCard>
         </div>
     )

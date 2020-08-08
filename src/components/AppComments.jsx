@@ -13,7 +13,7 @@ export default function AppComments(props) {
 
     useEffect(() => {
         const getComments = async () => {
-            const appComments = await (await Axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/comments/all/${props.appId}`)).data;
+            const appComments = await (await Axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/comments/app/${props.appId}`)).data;
             setCommentData({comments: appComments})
         }
 

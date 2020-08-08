@@ -6,7 +6,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn } 
 export default function AddComment(props) {
     const [formData, setFormData] = useState({
         comment:'',
-        author: JSON.parse(localStorage.getItem('user')), 
+        author: JSON.parse(localStorage.getItem('user'))._id, 
         app: props.app,
     });
 
@@ -23,6 +23,7 @@ export default function AddComment(props) {
     }
 
     const handleSubmit = event => {
+        console.log('submitting new comment')
         event.preventDefault()
         if(comment) {
             Axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/comments/new`, {
@@ -58,8 +59,9 @@ export default function AddComment(props) {
                                 <div className="grey-text">
                                     <MDBInput label="Your Comment" group type='text' onChange={handleChange('comment')} value={comment}></MDBInput>
                                     </div>
+                                    <MDBBtn type='submit' color='red'>Submit Comment</MDBBtn>
                                 </form>
-                                <MDBBtn type='submit' color='red'>Submit Comment</MDBBtn>
+                                
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>
