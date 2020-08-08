@@ -100,7 +100,7 @@
 .card-body-black{
     background-color: black;
     color:white;
-    height:20vh;
+    min-height:30vh;
 }
 
 .img-app-card{
