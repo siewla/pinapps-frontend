@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse } from "mdbreact";
-import { isAuth, logout } from '../../helpers/auth.services'
 
 export class HeaderNotLogin extends Component {
     state = {

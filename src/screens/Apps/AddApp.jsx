@@ -69,13 +69,12 @@ const AddApp = (props) => {
 
     return (
         <div>
-            <MDBContainer onSubmit={handleSubmit} className="margin-container">
+            <MDBContainer onSubmit={handleSubmit}>
                 <MDBRow>
                     <MDBCol>
                         <MDBCard>
                             <MDBCardBody>
                             <form>
-                                <p className="h5 text-center mb-4">Add New App</p>
                                 <p>{message}</p>
                                 <div className="grey-text">
                                 <MDBInput 
@@ -114,7 +113,7 @@ const AddApp = (props) => {
                                 </select>
                                 </div>
                                 <div className="text-center">
-                                <MDBBtn color="red" type="submit">Add the App!</MDBBtn>
+                                <MDBBtn color="red" type="submit">Submit</MDBBtn>
                                 </div>
                             </form>
                             </MDBCardBody>
