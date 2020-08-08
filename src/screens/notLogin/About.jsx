@@ -33,7 +33,7 @@ export class About extends Component {
                 <h1 className="category-heading">About Us</h1>
                 <div className="about-container"> 
                     <h3>
-                        <span className="red-text">PinsApp</span> is the application that allowing you to save/pin 
+                        <span className="red-text">PinApps</span> is the application that allowing you to save/pin 
                         your favorite apps easily and it also acts as platform for you 
                         to find the best apps in each category.
                     </h3>
