@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import AppsInHorizontalList from '../../components/AppsInHorizontalList'
+import { MDBBtn } from 'mdbreact';
+import AddAppModal from '../../components/AddAppModal'
+import UserProfile from '../../components/UserProfile'
+
 
 export class Main extends Component {
     constructor (props){
@@ -24,11 +28,17 @@ export class Main extends Component {
         return (
             <div className="main-container">
                 <div>
-                    {this.props.isLogin? <h4 className="greeting-text">Hi, <span className="small-name-text">{this.state.userData.name}</span></h4>: null}
+                    {this.props.isLogin? 
+                    <div>
+                        <UserProfile 
+                            user={this.state.userData}
+                        />
+                        <AddAppModal />
+                    </div> : null}
                 </div>
                 {this.state.categories.map(category=>
                 <div key={category._id}>
-                    <a href={'/apps/category/'+category._id}><h1 className="category-heading">{category.name}</h1></a>
+                    <a href={'/apps/category/'+category._id}><h1 className="category-heading text-underline">{category.name}</h1></a>
                     <AppsInHorizontalList 
                         key={category.value}
                         categoryID={category._id}
