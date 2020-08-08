@@ -18,7 +18,7 @@ class Googlelogin extends Component{
         })
         .then(res =>{
             authenticate(res, ()=>{
-                console.log('successfully login')
+                this.props.setLogin(true)
             })
         })
         .catch(err =>{

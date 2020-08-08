@@ -4,7 +4,7 @@ import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 
-const Login = () => {
+const Login = (props) => {
     const [formData, setFormData] = useState({
         email:'',
         password1:'',
@@ -37,11 +37,12 @@ const Login = () => {
                                 email:'',
                                 password1:'',
                             })
+                            props.setLogin(true)
                         })
                     })
                     .catch(err =>{
                         setMessage({
-                            message: 'Email doesn\'t exist or wrong password'
+                            message: ''
                         })
                     })
             } else{

@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import Googlelogin from '../Authentication/Googlelogin'
+import { isAuth } from '../../helpers/auth.services'
+import { Redirect } from 'react-router-dom'
 
-const Register = () => {
+const Register = (props) => {
     const [formData, setFormData] = useState({
         name:'',
         email:'',
@@ -64,7 +66,8 @@ const Register = () => {
     }
     return (
         <div>
-            <Googlelogin />
+            {isAuth() ? <Redirect to ='/'/>: null}
+            <Googlelogin setLogin={props.setLogin}/>
             <div className = "margin-container">
                 <MDBContainer onSubmit={handleSubmit}>
                     <MDBRow>

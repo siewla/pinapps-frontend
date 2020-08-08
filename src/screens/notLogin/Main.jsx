@@ -6,6 +6,7 @@ export class Main extends Component {
         super (props);
         this.state = {
             categories:[],
+            userData:JSON.parse(localStorage.getItem('user'))
         }
     }
 
@@ -22,8 +23,10 @@ export class Main extends Component {
     render() {
         return (
             <div className="main-container">
+                <div>
+                    {this.props.isLogin? <h4 className="greeting-text">Hi, <span className="small-name-text">{this.state.userData.name}</span></h4>: null}
+                </div>
                 {this.state.categories.map(category=>
-                
                 <div key={category._id}>
                     <a href={'/apps/category/'+category._id}><h1 className="category-heading">{category.name}</h1></a>
                     <AppsInHorizontalList 

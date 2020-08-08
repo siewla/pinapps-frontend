@@ -108,3 +108,13 @@
     height: 40vh;
     object-fit: cover;
 }
+
+.greeting-text{
+    text-align: right;
+    margin: 1vh;
+}
+
+.small-name-text{
+    color:red;
+    text-decoration: underline;
+}
