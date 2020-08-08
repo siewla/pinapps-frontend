@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
-const AddApp = () => {
+const AddApp = (props) => {
     const [formData, setFormData] = useState({
         name:'',
         url:'',
@@ -15,8 +15,6 @@ const AddApp = () => {
     const [categoryData, setCategories] = useState({
         allCategories:[],
     });
-    
-    
 
     useEffect(() => {
         const getCategoryData = async () => {
@@ -43,8 +41,9 @@ const AddApp = () => {
     const handleSubmit = event =>{
         event.preventDefault()
         if(name && url && description){
+            const userId = JSON.parse(localStorage.getItem('user'));
                 axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/apps/new`,{
-                    name, url, description, category
+                    name, url, description, category, userId
                 })
                     .then(res =>{
                         // console.log(res)
@@ -108,8 +107,8 @@ const AddApp = () => {
                                 <select className="browser-default custom-select" value={category} onChange={handleChange('category')}>
                                     
                                     <option>Category of App</option>
-                                    {categoryData.allCategories.map(category => {
-                                        return <option value={category._id} key={category._id}>{category.name}</option>
+                                    {categoryData.allCategories.map(categoryItem => {
+                                        return <option value={categoryItem._id} key={categoryItem._id}>{categoryItem.name}</option>
                                     })}
                                 </select>
                                 </div>

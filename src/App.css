@@ -1,4 +1,4 @@
-@font-face{
+@font-face {
     font-family: bebas_neue;
     src: url('./fonts/BebasNeue.otf')
 }
@@ -7,17 +7,17 @@
     font-family: bebas_neue;
 }
 
-.app-title{
-    color:red;
+.app-title {
+    color: red;
     font-size: 5vh;
 }
 
-.navitem-title{
-    color:white;
+.navitem-title {
+    color: white;
     font-size: 3vh;
 }
 
-.main-container-not-login{
+.main-container-not-login {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -26,122 +26,134 @@
     padding: 5vh;
 }
 
-.margin-container{
+.margin-container {
     margin: 2vh;
 }
 
-.category-heading{
+.category-heading {
     text-align: center;
-    color:red;
-    margin-top:2vh;
+    color: red;
+    margin-top: 2vh;
 }
 
-.text-underline{
+.text-underline {
     text-decoration: underline;
 }
 
-.horizontal-apps-container{
+.horizontal-apps-container {
     margin: auto;
     width: 90%;
     min-height: 40vh;
-    display:flex;
+    display: flex;
     justify-content: center;
     /* overflow-y: visible; */
     /* overflow-x: auto; */
-    
+
 }
 
-.horizontal-app-card{
+.horizontal-app-card {
     position: relative;
     display: block;
     transition: transform 500ms;
-    background-color:white;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    background-color: white;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
     margin: 2vh;
     border-radius: 1vh;
     overflow: visible;
 }
 
 .horizontal-apps-container .horizontal-app-card:focus,
-.horizontal-apps-container .horizontal-app-card:hover{
-    display:block;
+.horizontal-apps-container .horizontal-app-card:hover {
+    display: block;
     transform: scale(1.3);
     z-index: 1;
 }
 
-.horizontal-app-image{
+.horizontal-app-image {
     margin: 2vh;
     max-width: 40vh;
     /* border: 1px solid red */
 }
 
-.footer-css{
-    color:white;
+.footer-css {
+    color: white;
     font-size: 2vh;
 }
 
-.float-right{
+.float-right {
     float: right;
     margin-right: 5vh;
 }
 
-.middle-container{
+.middle-container {
     text-align: center;
-    margin-top:2vh;
+    margin-top: 2vh;
 }
 
-.main-container{
+.main-container {
     margin-bottom: 20vh;
 }
 
-.favorite-button{
-    float:right;
+.favorite-button {
+    float: right;
     color: yellow;
     padding: 1vh;
     border-radius: 20%;
 }
 
-.card-body-black{
+.card-body-black {
     background-color: black;
-    color:white;
-    min-height:30vh;
+    color: white;
+    min-height: 30vh;
 }
 
-.img-app-card{
+.img-app-card {
     width: 100%;
     height: 40vh;
     object-fit: cover;
 }
 
-.greeting-text{
+.greeting-text {
     text-align: right;
     margin: 1vh;
 }
 
-.small-name-text{
-    color:red;
+.small-name-text {
+    color: red;
     text-decoration: underline;
 }
 
-.about-container{
-    width:60%;
-    margin:auto;
+.all-apps-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-card {
+    margin: 2vh;
+}
+
+.about-container {
+    width: 60%;
+    margin: auto;
     text-align: center;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.15), 0 5px 5px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.15);
     padding: 3vh;
     border-radius: 1vh;
 }
 
 @media only screen and (max-width: 1024px) {
-    .horizontal-apps-container{
+    .horizontal-apps-container {
         width: 100%;
         justify-content: flex-start;
         overflow: auto;
     }
 
     .horizontal-apps-container .horizontal-app-card:focus,
-    .horizontal-apps-container .horizontal-app-card:hover{
-        display:block;
+    .horizontal-apps-container .horizontal-app-card:hover {
+        display: block;
         transform: scale(1);
         z-index: 1;
     }

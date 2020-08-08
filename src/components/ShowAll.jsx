@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import AppsList from './AppsList'
-import './styles/showall.css'
 
 export class ShowAll extends Component {
     constructor(props){
@@ -27,7 +26,7 @@ export class ShowAll extends Component {
         return (
             <div >
                 <h1 className="category-heading">{this.props.categoryName}</h1>
-                <AppsList apps={this.state.apps} />
+                <AppsList apps={this.state.apps}/>
             </div>
         )
     }
