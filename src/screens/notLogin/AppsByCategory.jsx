@@ -24,7 +24,7 @@ export class AppsByCategory extends Component {
 
     render() {
         return (
-            <div>
+            <div className="main-container">
                 <div>
                     {this.props.isLogin? 
                     <div>
