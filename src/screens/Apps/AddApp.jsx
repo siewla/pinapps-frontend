@@ -110,8 +110,8 @@ const AddApp = (props) => {
                                 <select className="browser-default custom-select" value={category} onChange={handleChange('category')}>
                                     
                                     <option>Category of App</option>
-                                    {categoryData.allCategories.map(category => {
-                                        return <option value={category._id} key={category._id}>{category.name}</option>
+                                    {categoryData.allCategories.map(categoryItem => {
+                                        return <option value={categoryItem._id} key={categoryItem._id}>{categoryItem.name}</option>
                                     })}
                                 </select>
                                 </div>
