@@ -130,3 +130,12 @@
 .app-card {
     margin: 2vh;
 }
+
+.about-container {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.15);
+    padding: 3vh;
+    border-radius: 1vh;
+}

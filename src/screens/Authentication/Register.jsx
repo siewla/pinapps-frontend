@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { authenticate, isAuth } from '../../helpers/auth'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
+import Googlelogin from '../Authentication/Googlelogin'
+import { isAuth } from '../../helpers/auth.services'
+import { Redirect } from 'react-router-dom'
 
-
-const Register = () => {
+const Register = (props) => {
     const [formData, setFormData] = useState({
         name:'',
         email:'',
@@ -32,7 +32,7 @@ const Register = () => {
     const handleSubmit = event =>{
         // console.log(process.env.REACT_APP_BACKEND_API_URL)
         event.preventDefault()
-        console.log(name, email, password1)
+        // console.log(name, email, password1)
         if(name && email && password1){
             if (password1 === password2){
                 axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/register`,{
@@ -51,7 +51,7 @@ const Register = () => {
                     })
                 })
                     .catch(err =>{
-                        console.log(err)
+                        // console.log(err)
                     })
             } else{
                 setMessage({
@@ -66,8 +66,9 @@ const Register = () => {
     }
     return (
         <div>
-            {isAuth()? <Redirect to ='/'/>: null}
-            <div>
+            {isAuth() ? <Redirect to ='/'/>: null}
+            <Googlelogin setLogin={props.setLogin}/>
+            <div className = "margin-container">
                 <MDBContainer onSubmit={handleSubmit}>
                     <MDBRow>
                         <MDBCol>
@@ -119,7 +120,7 @@ const Register = () => {
                                 />
                                 </div>
                                 <div className="text-center py-4 mt-3">
-                                <MDBBtn color="cyan" type="submit">
+                                <MDBBtn color="red" type="submit">
                                     Register
                                 </MDBBtn>
                                 </div>
@@ -129,7 +130,6 @@ const Register = () => {
                         </MDBCol>
                     </MDBRow>
                     </MDBContainer>
-                    
             </div>
         </div>
     )

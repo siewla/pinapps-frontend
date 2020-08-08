@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { authenticate, isAuth } from '../../helpers/auth'
+import { authenticate, isAuth } from '../../helpers/auth.services'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
-const Login = () => {
+
+const Login = (props) => {
     const [formData, setFormData] = useState({
         email:'',
         password1:'',
@@ -37,11 +37,12 @@ const Login = () => {
                                 email:'',
                                 password1:'',
                             })
+                            props.setLogin(true)
                         })
                     })
                     .catch(err =>{
                         setMessage({
-                            message: 'Email doesn\'t exist or wrong password'
+                            message: ''
                         })
                     })
             } else{
@@ -52,47 +53,44 @@ const Login = () => {
     }
     return (
         <div>
-            {isAuth()? <Redirect to ='/'/>: null}
-            <div>
-                <MDBContainer onSubmit={handleSubmit}>
-                    <MDBRow>
-                        <MDBCol>
-                            <MDBCard>
-                                <MDBCardBody>
-                                <form>
-                                    <p className="h5 text-center mb-4">Sign in</p>
-                                    <p>{message}</p>
-                                    <div className="grey-text">
-                                    <MDBInput 
-                                        label="Type your email" 
-                                        icon="envelope" group 
-                                        type="email" 
-                                        validate 
-                                        error="wrong"
-                                        success="right" 
-                                        onChange={handleChange('email')}
-                                        value={email}
-                                    />
-                                    <MDBInput 
-                                        label="Type your password" 
-                                        icon="lock" 
-                                        group 
-                                        type="password" 
-                                        validate 
-                                        onChange={handleChange('password1')}
-                                        value={password1}
-                                    />
-                                    </div>
-                                    <div className="text-center">
-                                    <MDBBtn type="submit">Login</MDBBtn>
-                                    </div>
-                                </form>
-                                </MDBCardBody>
-                            </MDBCard>
-                        </MDBCol>
-                    </MDBRow>
-                </MDBContainer>  
-            </div>
+            <MDBContainer onSubmit={handleSubmit} className="margin-container">
+                <MDBRow>
+                    <MDBCol>
+                        <MDBCard>
+                            <MDBCardBody>
+                            <form>
+                                <p className="h5 text-center mb-4">Sign in</p>
+                                <p>{message}</p>
+                                <div className="grey-text">
+                                <MDBInput 
+                                    label="Type your email" 
+                                    icon="envelope" group 
+                                    type="email" 
+                                    validate 
+                                    error="wrong"
+                                    success="right" 
+                                    onChange={handleChange('email')}
+                                    value={email}
+                                />
+                                <MDBInput 
+                                    label="Type your password" 
+                                    icon="lock" 
+                                    group 
+                                    type="password" 
+                                    validate 
+                                    onChange={handleChange('password1')}
+                                    value={password1}
+                                />
+                                </div>
+                                <div className="text-center">
+                                <MDBBtn color="red" type="submit">Login</MDBBtn>
+                                </div>
+                            </form>
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer> 
         </div>
     )
 }

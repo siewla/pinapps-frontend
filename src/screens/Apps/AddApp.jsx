@@ -20,9 +20,9 @@ const AddApp = (props) => {
 
     useEffect(() => {
         const getCategoryData = async () => {
-            console.log('getting category data')
+            // console.log('getting category data')
             const allCategories = await (await axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/categories/all`)).data
-            console.log('call result',allCategories)
+            // console.log('call result',allCategories)
             setCategories({allCategories}) 
         }
         getCategoryData()
@@ -48,6 +48,7 @@ const AddApp = (props) => {
                     name, url, description, category, userId
                 })
                     .then(res =>{
+                        // console.log(res)
                         setFormData({
                             ...formData,
                             name:'',
@@ -70,7 +71,7 @@ const AddApp = (props) => {
 
     return (
         <div>
-            <MDBContainer onSubmit={handleSubmit}>
+            <MDBContainer onSubmit={handleSubmit} className="margin-container">
                 <MDBRow>
                     <MDBCol>
                         <MDBCard>
@@ -110,13 +111,12 @@ const AddApp = (props) => {
                                     
                                     <option>Category of App</option>
                                     {categoryData.allCategories.map(category => {
-                                        console.log(category)
                                         return <option value={category._id} key={category._id}>{category.name}</option>
                                     })}
                                 </select>
                                 </div>
                                 <div className="text-center">
-                                <MDBBtn type="submit">Add the App!</MDBBtn>
+                                <MDBBtn color="red" type="submit">Add the App!</MDBBtn>
                                 </div>
                             </form>
                             </MDBCardBody>
