@@ -1,6 +1,14 @@
+
+
+
+
 //set in localstorage
 export const setLocalStorage =(key,value) => {
+    console.log(key,value);
+    localStorage.setItem ('keone', 'testing')
     localStorage.setItem(key, JSON.stringify(value))
+    // localStorage.setItem(key, JSON.stringify(value))
+
 }
 
 //remove from localstorage
@@ -10,7 +18,7 @@ export const removeLocalStorage = key => {
 
 //authenticate user after login
 export const authenticate = (response, next) => {
-    setLocalStorage('token', response.data.token)
+    // setLocalStorage('token', response.data.token)
     setLocalStorage('user', response.data.user)
     next()
 }

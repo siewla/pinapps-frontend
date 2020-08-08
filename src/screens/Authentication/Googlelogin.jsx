@@ -17,9 +17,11 @@ class Googlelogin extends Component{
             idToken: tokenId
         })
         .then(res =>{
-            authenticate(res, ()=>{
-                console.log('successfully login')
-            })
+        localStorage.setItem ('keone', 'testing')
+           localStorage.setItem('user', res.data.user._id)
+           localStorage.setItem('token', res.data.token)
+           console.log(typeof(res.data.token))
+           this.props.setLogin(true)
         })
         .catch(err =>{
             this.setState({

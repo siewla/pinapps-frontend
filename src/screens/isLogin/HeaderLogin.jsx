@@ -37,7 +37,7 @@ export class HeaderLogin extends Component {
                             </MDBNavLink>
                         </MDBNavItem>
                         <MDBNavItem>
-                            <form onSubmit={this.handleLogout()}>
+                            <form onSubmit={this.handleLogout}>
                                 <MDBBtn type="submit" color="red">Logout</MDBBtn>
                             </form>
                         </MDBNavItem>

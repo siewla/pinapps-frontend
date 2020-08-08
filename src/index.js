@@ -25,26 +25,7 @@ import HeaderNotLogin from '../src/screens/notLogin/HeaderNotLogin';
 import { isAuth } from '../src/helpers/auth.services'
 
 ReactDOM.render(
-    <div>
-      <Router>
-        {isAuth()? 
-                <HeaderLogin /> : <HeaderNotLogin />}
-        <HeaderNotLogin />
-        <Switch>
-          <Route path ='/' exact render={props => <App {...props} />}/>
-          <Route path ='/about' exact render={props => <About {...props} />}/>
-          <Route path ='/apps' exact render ={props => <ShowAll {...props} />} />
-          <Route path ='/apps/new' exact render ={props => <AddApp {...props} />} />
-          <Route path ='/users/register' exact render={props => <Register {...props} />}/>
-          <Route path ='/users/login' exact render={props => <NotLogin {...props} />}/>
-          <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
-          <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
-          <Route path ='/apps/category/:categoryID' exact render={props => <AppsByCategory {...props} />}/>  
-          <Route path ='/myapps' exact render={props => <MyApps {...props} />}/>  
-        </Switch> 
-        <Footer />
-      </Router>
-    </div>
+  <App/>
     ,
   document.getElementById('root')
 );
