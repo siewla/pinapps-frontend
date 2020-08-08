@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import AppsList from './AppsList'
-import './styles/showall.css'
 
 export class ShowAll extends Component {
     constructor(props){

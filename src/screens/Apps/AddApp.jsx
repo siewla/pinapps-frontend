@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
-const AddApp = () => {
+const AddApp = (props) => {
     const [formData, setFormData] = useState({
         name:'',
         url:'',
@@ -43,8 +43,9 @@ const AddApp = () => {
     const handleSubmit = event =>{
         event.preventDefault()
         if(name && url && description){
+            const userId = props.userId
                 axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/apps/new`,{
-                    name, url, description, category
+                    name, url, description, category, userId
                 })
                     .then(res =>{
                         setFormData({
