@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol,
     MDBContainer, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import { Link } from 'react-router-dom';
+import AppComments from './AppComments';
 
 class AppCard extends Component {
     constructor(props){
@@ -41,6 +42,7 @@ class AppCard extends Component {
                 <MDBModalHeader toggle={this.toggle}>{this.props.name}</MDBModalHeader>
                 <MDBModalBody>
                     <h3>All comments</h3>
+                    <AppComments appId={this.props.appId}></AppComments>
                 </MDBModalBody>
                 <MDBModalFooter>
                     <MDBBtn color="red" onClick={this.toggle}>Close</MDBBtn>

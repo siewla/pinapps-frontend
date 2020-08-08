@@ -1,8 +1,10 @@
 import React from 'react'
 import { MDBCard, MDBCardHeader, MDBCardText, MDBCardFooter } from 'mdbreact'
+import { useState } from 'react'
 
 
 export default function ShowComment(props) {
+    const [] = useState()
     return (
         <div>
             <MDBCard>
