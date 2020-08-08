@@ -5,6 +5,9 @@ import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HeaderLogin from '../src/screens/isLogin/HeaderLogin';
 import HeaderNotLogin from '../src/screens/notLogin/HeaderNotLogin';
 
+import Activate from './screens/Authentication/Activate'
+import Reset from './screens/Authentication/Reset'
+
 import Main from './screens/notLogin/Main'
 import About from './screens/notLogin/About'
 import Register from './screens/Authentication/Register'
@@ -52,6 +55,8 @@ export class App extends Component {
             <Route path ='/users/login' exact render={props => <NotLogin {...props} userData={this.state.userData} isLogin={this.state.isLogin} setLogin={this.setLogin} />}/>
             <Route path ='/apps/category/:categoryID' exact render={props => <AppsByCategory {...props} userData={this.state.userData} />}/> 
             <Route path ='/myapps/' exact render={props => <MyApps {...props} userData={this.state.userData} />}/> 
+            <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
+            <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
           </Switch>
           <Footer />
         </Router>

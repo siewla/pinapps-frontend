@@ -100,7 +100,7 @@
 .card-body-black {
     background-color: black;
     color: white;
-    height: 20vh;
+    min-height: 30vh;
 }
 
 .img-app-card {
@@ -138,4 +138,19 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.15);
     padding: 3vh;
     border-radius: 1vh;
+}
+
+@media only screen and (max-width: 1024px) {
+    .horizontal-apps-container {
+        width: 100%;
+        justify-content: flex-start;
+        overflow: auto;
+    }
+
+    .horizontal-apps-container .horizontal-app-card:focus,
+    .horizontal-apps-container .horizontal-app-card:hover {
+        display: block;
+        transform: scale(1);
+        z-index: 1;
+    }
 }
