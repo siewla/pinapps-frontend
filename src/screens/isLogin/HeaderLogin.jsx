@@ -26,6 +26,11 @@ export class HeaderLogin extends Component {
                     <MDBNavbarNav left>
                     </MDBNavbarNav>
                     <MDBNavbarNav right>
+                    <MDBNavItem>
+                            <MDBNavLink className="navitem-title"to="/about">
+                                About
+                            </MDBNavLink>
+                        </MDBNavItem>
                         <MDBNavItem>
                             <MDBNavLink className="navitem-title" to="/">
                                 All Apps

@@ -53,7 +53,8 @@ const AddApp = (props) => {
                             url:'',
                             description:'',
                             category:''
-                        })
+                        });
+                        props.fetchData();
                     })
                     .catch(err =>{
                         setMessage({

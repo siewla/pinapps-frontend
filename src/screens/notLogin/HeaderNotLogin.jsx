@@ -22,11 +22,6 @@ export class HeaderNotLogin extends Component {
                     </MDBNavbarNav>
                     <MDBNavbarNav right>
                         <MDBNavItem>
-                            <MDBNavLink className="navitem-title" to="/">
-                                Home
-                            </MDBNavLink>
-                        </MDBNavItem>
-                        <MDBNavItem>
                             <MDBNavLink className="navitem-title"to="/about">
                                 About
                             </MDBNavLink>

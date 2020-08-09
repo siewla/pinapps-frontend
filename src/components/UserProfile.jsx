@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader } from 'mdbreact';
 import AddApp from '../screens/Apps/AddApp'
 
-class AddAppModal extends Component {
+class UserProfile extends Component {
 state = {
     modal: false
 }
@@ -32,4 +32,4 @@ render() {
     }
 }
 
-export default AddAppModal
+export default UserProfile

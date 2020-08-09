@@ -21,6 +21,13 @@ export default function ShowComment(props) {
 
     const formComment = editCommentForm.comment;
 
+    const isUserAuthor = (commentAuthorId) => {
+        if (props.isLogin) {
+            return JSON.parse(localStorage.getItem('user'))._id === commentAuthorId;
+        }
+        return false
+    }
+
     const handleEditCommentChange = event => {
         setFormData({
             ...editCommentForm, comment: event.target.value
@@ -98,7 +105,5 @@ export default function ShowComment(props) {
     )
 }
 
-function isUserAuthor(authorId) {
-    return JSON.parse(localStorage.getItem('user'))._id === authorId;
-}
+
 

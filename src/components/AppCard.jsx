@@ -10,7 +10,7 @@ class AppCard extends Component {
         super(props)
             this.state = {
                 modal: false,
-                currentUser: JSON.parse(localStorage.getItem('user'))._id,
+                currentUser: JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user'))._id : "",
                 isLiked: false
             }
     }

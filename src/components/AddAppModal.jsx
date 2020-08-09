@@ -21,7 +21,7 @@ render() {
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                 <MDBModalHeader toggle={this.toggle}>Add New App</MDBModalHeader>
                 <MDBModalBody>
-                    <AddApp />
+                    <AddApp fetchData={this.props.fetchData}/>
                 </MDBModalBody>
             </MDBModal>
             </MDBContainer>

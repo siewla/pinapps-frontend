@@ -33,7 +33,7 @@ export class Main extends Component {
                         <UserProfile 
                             user={this.state.userData}
                         />
-                        <AddAppModal />
+                        <AddAppModal fetchData={this.fetchCategories}/>
                     </div> : null}
                 </div>
                 {this.state.categories.map(category=>

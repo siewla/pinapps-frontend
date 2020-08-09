@@ -14,14 +14,19 @@ export default function AppComments(props) {
         const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/comments/app/${props.appId}`)
         const results = await response.json();
         setComments ({
-            comments: results
+            comments: results.sort((a,b) => {
+                const diff = Date(b.createdAt) > Date(a.createdAt) ? 1 : -1
+                console.log('sorting diff', diff)
+                return diff
+            })
         })
     }
 
     return (
         <div>
-            <AddComment appId={props.appId} fetchComments={fetchComments}/>
+            <div>{comments.comments.length} Comments</div>
             <CommentsContainer appId={props.appId} isLogin={props.isLogin} fetchComments={fetchComments} comments={comments.comments}/>
+            {props.isLogin && <AddComment appId={props.appId} fetchComments={fetchComments}/>}
         </div>
     )
 }

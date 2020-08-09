@@ -207,7 +207,7 @@
     width: 90%;
     height: 100%;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     max-height: 35vh;
     overflow: auto;
     justify-content: flex-start;
