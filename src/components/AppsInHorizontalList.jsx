@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ShowAppPopOut from './ShowAppPopOut'
 import { MDBBtn } from 'mdbreact';
-import AppCard from './AppCard'
+import AppCard from '../components/AppCard'
 
 
 export class AppsInHorizontalList extends Component {
@@ -41,7 +41,7 @@ export class AppsInHorizontalList extends Component {
                                     description={app.description}
                                     url={app.url}
                                     appId={app._id}
-                                    isLogin={this.state.isLogin}
+                                    isLogin={this.props.isLogin}
                                 />
                             </div> 
                         )}

@@ -19,7 +19,7 @@
 }
 
 .main-container-not-login {
-    background-color: purple;
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -28,7 +28,7 @@
 }
 
 .register-container {
-    background-color: purple;
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -74,13 +74,13 @@
 
 .category-heading-title {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .category-container {
     width: 80%;
     margin: auto;
-    margin-bottom: 2vh;
+    /* margin-bottom: 2vh; */
     padding: 1vh;
     /* opacity: 0.5; */
 }
@@ -128,12 +128,13 @@
 
 .main-container {
     padding-bottom: 25vh;
-    background-color: purple;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .login-main-header {
     display: flex;
     justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.15)
 }
 
 .favorite-button {
