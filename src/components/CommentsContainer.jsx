@@ -10,13 +10,7 @@ export class CommentsContainer extends Component {
             }
     }
 
-    fetchComments = async()=>{
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/comments/app/${this.props.appId}`)
-        const results = await response.json();
-        this.setState({
-            comments: results
-        })
-    }
+    
 
     scrollToTop =() =>{
         animateScroll.scrollToTop({
@@ -29,14 +23,14 @@ export class CommentsContainer extends Component {
     }
 
     componentDidMount (){
-        this.fetchComments()
+        this.props.fetchComments()
         this.scrollToTop()
     }
 
     render() {
         return (
             <div className="comments-container" id="comments-container">
-                {this.state.comments.map(comment => 
+                {this.props.comments.map(comment => 
                 <ShowComment 
                     author={comment.author} 
                     comment={comment.comment} 

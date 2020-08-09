@@ -31,6 +31,7 @@ export default function AddComment(props) {
                 ...formData, comment
             })
             .then(res => {
+                props.fetchComments();
                 setFormData({
                     ...formData,
                     comment: '',
