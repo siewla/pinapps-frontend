@@ -33,11 +33,14 @@ export class AppsInHorizontalList extends Component {
                     <div className="horizontal-apps-container">
                         {subsetApps.map((app,index)=>
                             <div>
-                                <ShowAppPopOut 
+                                <AppCard 
                                     key={app._id}
                                     screenshot={app.screenshot}
-                                    appName={app.name}
-                                    appDetails={app}
+                                    name={app.name}
+                                    description={app.description}
+                                    url={app.url}
+                                    appId={app._id}
+                                    isLogin={this.state.isLogin}
                                 />
                             </div> 
                         )}
