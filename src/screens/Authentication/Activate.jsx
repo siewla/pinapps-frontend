@@ -48,7 +48,7 @@ export class Activate extends Component {
             this.setState({
                 message: res.data.message
             })
-            console.log(res.data.message)
+            // console.log(res.data.message)
         }).catch(err =>{
             this.setState({
                 message: 'Token Activated Before'

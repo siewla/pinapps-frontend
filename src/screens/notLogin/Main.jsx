@@ -10,14 +10,26 @@ export class Main extends Component {
         super (props);
         this.state = {
             categories:[],
-            userData:JSON.parse(localStorage.getItem('user'))
+            userData:JSON.parse(localStorage.getItem('user')),
+            apps:[]
         }
+    }
+
+    fetchApps = async () => {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/all`)
+        // console.log('fetching apps')
+        const results = await response.json ();
+        this.setState({apps:results})
     }
 
     fetchCategories = async () =>{
         const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/categories/all`)
         const results = await response.json();
-        this.setState({categories:results})
+        this.setState(()=>{
+            // console.log('fetching categories')
+            return {categories:results}
+        })
+        
     }
 
     componentDidMount (){
@@ -33,7 +45,7 @@ export class Main extends Component {
                         <UserProfile 
                             user={this.state.userData}
                         />
-                        <AddAppModal fetchData={this.fetchCategories}/>
+                        <AddAppModal fetchData={this.fetchApps}/>
                     </div> : null}
                 </div>
                 {this.state.categories.map(category=>

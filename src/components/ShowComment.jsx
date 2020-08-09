@@ -36,16 +36,16 @@ export default function ShowComment(props) {
 
     const submitCommentEdit = event => {
         event.preventDefault()
-        console.log('editing comment')
+        // console.log('editing comment')
         if(formComment) {
             Axios.put(`${process.env.REACT_APP_BACKEND_API_URL}/comments/${props.commentId}`, editCommentForm)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 props.fetchComments();
                 setEditState({editing: false})
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
         }
     }
@@ -59,12 +59,12 @@ export default function ShowComment(props) {
     },[props.author])
 
     const deleteComment = () => {
-        console.log('deleting comment')
+        // console.log('deleting comment')
         Axios.delete(`${process.env.REACT_APP_BACKEND_API_URL}/comments/${props.commentId}`).then(res => {
-            console.log(res);
+            // console.log(res);
             props.fetchComments();
         }).catch(err => {
-            console.log(err);
+            // console.log(err);
         })
     }
 

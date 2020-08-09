@@ -37,21 +37,21 @@ class AppCard extends Component {
 
     toggleLike = () => {
         try {
-            console.log('toggling likes', this.state.isLiked)
+            // console.log('toggling likes', this.state.isLiked)
             this.state.isLiked ? Axios.patch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/unlike/${this.props.appId}`, {
                 userId: this.state.currentUser
             }).then(res => {
-                console.log('unlike:', res)
+                // console.log('unlike:', res)
                 this.props.fetchApps();
             }) : Axios.patch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/like/${this.props.appId}`, {
                 userId: this.state.currentUser
             }).then(res => {
-                console.log('like:', res);
+                // console.log('like:', res);
                 this.props.fetchApps();
             })
             
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
     }
     

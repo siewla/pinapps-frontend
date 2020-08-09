@@ -16,7 +16,7 @@ export default function AppComments(props) {
         setComments ({
             comments: results.sort((a,b) => {
                 const diff = Date(b.createdAt) > Date(a.createdAt) ? 1 : -1
-                console.log('sorting diff', diff)
+                // console.log('sorting diff', diff)
                 return diff
             })
         })

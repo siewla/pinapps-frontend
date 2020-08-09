@@ -14,7 +14,7 @@ export class AppsInHorizontalList extends Component {
 
     fetchApps = async () => {
         const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/category/${this.props.categoryID}`)
-        console.log('fetching apps')
+        // console.log('fetching apps')
         const results = await response.json ();
         this.setState({apps:results})
     }
