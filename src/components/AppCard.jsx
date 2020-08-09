@@ -3,7 +3,6 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
     MDBContainer, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import { Link } from 'react-router-dom';
 import AppComments from './AppComments';
-import likes from '../helpers/likes'
 import Axios from 'axios';
 
 class AppCard extends Component {
@@ -23,20 +22,34 @@ class AppCard extends Component {
         })
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.likes !== this.props.likes) {
+            this.setState({
+            isLiked: this.props.likes.includes(this.state.currentUser)
+        })}
+    }
+
     toggle = () => {
         this.setState({
             modal: !this.state.modal
         });
     }
 
-    toggleLike = async () => {
+    toggleLike = () => {
         try {
-            await this.state.isLiked ? await Axios.patch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/unlike/${this.props.appId}`, {
+            console.log('toggling likes', this.state.isLiked)
+            this.state.isLiked ? Axios.patch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/unlike/${this.props.appId}`, {
                 userId: this.state.currentUser
-            }) : await Axios.patch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/like/${this.props.appId}`, {
+            }).then(res => {
+                console.log('unlike:', res)
+                this.props.fetchApps();
+            }) : Axios.patch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/like/${this.props.appId}`, {
                 userId: this.state.currentUser
+            }).then(res => {
+                console.log('like:', res);
+                this.props.fetchApps();
             })
-            this.props.fetchApps();
+            
         } catch (error) {
             console.log(error);
         }
