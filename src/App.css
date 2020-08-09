@@ -27,7 +27,7 @@
     padding-bottom: 30vh;
 }
 
-.register-container{
+.register-container {
     background-color: purple;
     display: flex;
     flex-direction: column;
@@ -35,47 +35,49 @@
     align-items: center;
     padding-bottom: 30vh;
 }
-.white-text-or{
-    color:white;
+
+.white-text-or {
+    color: white;
     margin-top: 2vh;
 }
-#submit-button{
+
+#submit-button {
     font-size: 2vh;
 }
 
-.signup-container{
+.signup-container {
     margin: 2vh;
     width: 50vh;
 }
 
-.signin-container{
+.signin-container {
     margin: 2vh;
     width: 50vh;
 }
 
-.forget-container{
+.forget-container {
     width: 50vh;
 }
 
 .category-heading {
     text-align: center;
-    color:white;
+    color: white;
     padding-top: 2vh;
 }
 
-.category-heading-white{
+.category-heading-white {
     text-align: center;
-    color:white;
+    color: white;
     /* border: 1px solid black; */
 
 }
 
-.category-heading-title{
+.category-heading-title {
     display: flex;
     justify-content: space-around;
 }
 
-.category-container{
+.category-container {
     width: 80%;
     margin: auto;
     margin-bottom: 2vh;
@@ -129,16 +131,25 @@
     background-color: purple;
 }
 
-.login-main-header{
+.login-main-header {
     display: flex;
     justify-content: space-between;
 }
 
 .favorite-button {
     float: right;
-    color: yellow;
+
     padding: 1vh;
     border-radius: 20%;
+    background-color: royalblue;
+}
+
+.favorite-button-enabled {
+    color: yellow;
+}
+
+.favorite-button-disabled {
+    color: black;
 }
 
 .card-body-black {
@@ -157,7 +168,7 @@
 .greeting-text {
     text-align: right;
     margin: 1vh;
-    color:white;
+    color: white;
 }
 
 .small-name-text {
@@ -187,7 +198,7 @@
     background-color: white;
 }
 
-.comments-container{
+.comments-container {
     margin-top: 2vh;
     width: 90%;
     height: 100%;
@@ -200,7 +211,7 @@
     /* border: 1px solid black; */
 }
 
-.individual-comment-container{
+.individual-comment-container {
     padding: 1vh;
     background-color: white;
     border: 1vh solid rgba(255, 0, 0, 0.50);
@@ -208,17 +219,17 @@
     overflow: auto; */
 }
 
-.comment-text{
+.comment-text {
     text-align: center;
     color: gray;
 }
 
-.comment-footer{
+.comment-footer {
     text-align: right;
     color: rgba(255, 0, 0, 0.50)
 }
 
-#addapp-button{
+#addapp-button {
     font-size: 2vh;
 }
 
