@@ -85,15 +85,15 @@ export default function ShowComment(props) {
             <h6 className="comment-footer"><Moment fromNow>{props.date}</Moment></h6>
             { isUserAuthor(authorId) && <div>
                 {editing ? <div>
-                    <MDBBtn onClick={submitCommentEdit} type='submit'>Submit</MDBBtn>
-                    <MDBBtn onClick={disableEditComment} color='danger'>Cancel</MDBBtn>
+                    <MDBBtn size="sm" onClick={submitCommentEdit} type='submit'>Submit</MDBBtn>
+                    <MDBBtn size="sm" onClick={disableEditComment} color='danger'>Cancel</MDBBtn>
                 </div> : <div>
-                    <MDBBtn onClick={enableEditComment}>Edit Comment</MDBBtn>
-                    <MDBBtn color='danger' onClick={deleteComment}>Delete Comment</MDBBtn>
+                    <MDBBtn size="sm" onClick={enableEditComment}>Edit Comment</MDBBtn>
+                    <MDBBtn size="sm" color='danger' onClick={deleteComment}>Delete Comment</MDBBtn>
                 </div>}
                 
             </div>
-             }
+            }
         </div> 
     )
 }

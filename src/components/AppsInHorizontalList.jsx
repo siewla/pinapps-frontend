@@ -41,7 +41,7 @@ export class AppsInHorizontalList extends Component {
                                     description={app.description}
                                     url={app.url}
                                     appId={app._id}
-                                    isLogin={this.state.isLogin}
+                                    isLogin={this.props.isLogin}
                                 />
                             </div> 
                         )}
