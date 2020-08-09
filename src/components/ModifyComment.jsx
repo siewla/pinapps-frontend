@@ -1,22 +1,17 @@
 import React from 'react'
 import { MDBBtn } from 'mdbreact'
-import Axios from 'axios'
 
 export default function ModifyComment(props) {
-    const deleteComment = () => {
-        Axios.delete(`${process.env.REACT_APP_BACKEND_API_URL}/comments/${props.commentId}`).then(res => {
-            console.log(res);
-            props.fetchComments();
-        }).catch(err => {
-            console.log(err);
-        })
-        
-    }
-
     return (
         <div>
-            <MDBBtn>Edit Comment</MDBBtn>
-            <MDBBtn color='danger' onClick={deleteComment}>Delete Comment</MDBBtn>
+            {props.editing ? <div>
+                <MDBBtn onClick={props.submitCommentEdit}>Submit</MDBBtn>
+                <MDBBtn onClick={props.disableEditComment}>Cancel</MDBBtn>
+            </div> : <div>
+                <MDBBtn onClick={props.enableEditComment}>Edit Comment</MDBBtn>
+                <MDBBtn color='danger' onClick={props.deleteComment}>Delete Comment</MDBBtn>
+            </div>}
+            
         </div>
     )
 }
