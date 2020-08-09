@@ -14,12 +14,13 @@ export class MyApps extends Component {
         }
     }
 
-    fetchMyApps = () => {
-        Axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/users/liked-apps/${this.state.userData._id}`).then(apps => {
-            this.setState({
-                apps: apps.data
-            })
+    fetchMyApps = async () => {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/users/liked-apps/${this.state.userData._id}`)
+        const results = await response.json()
+        this.setState({
+            apps: results
         })
+    
     }
 
     componentDidMount() {

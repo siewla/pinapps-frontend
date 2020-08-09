@@ -34,7 +34,7 @@ export class AppsInHorizontalList extends Component {
                     </div>
                     <div className="horizontal-apps-container">
                         {subsetApps.map((app,index)=>
-                            <div>
+                            <div key={app._id}>
                                 <AppCard 
                                     key={app._id}
                                     screenshot={app.screenshot}
