@@ -43,6 +43,7 @@ export class Main extends Component {
                         categoryID={category._id}
                         categoryName={category.name}
                         color="none"
+                        isLogin={this.state.isLogin}
                     />
                 </div> 
                 )}
