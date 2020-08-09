@@ -12,6 +12,7 @@ export class NotLogin extends Component {
                 {this.props.isLogin ? <Redirect to ='/'/>: null}
                 <div className="main-container-not-login">
                     <Googlelogin isLogin={this.props.isLogin} setLogin={this.props.setLogin} userData={this.props.userData} setUserData={this.props.setUserData} />
+                    <h4 className="white-text-or">or</h4>
                     <Login isLogin={this.props.isLogin} setLogin={this.props.setLogin} userData={this.props.userData} setUserData={this.props.setUserData} />
                     <Forget />
                 </div>

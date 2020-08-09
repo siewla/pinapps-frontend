@@ -10,7 +10,6 @@ class Googlelogin extends Component{
             message:''
         }
     }
- 
     //send google token
     sendGoogleToken = tokenId => {
         axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/googlelogin`,{
@@ -38,7 +37,7 @@ class Googlelogin extends Component{
         return (
             <div>
                 <p>{this.message}</p>
-                <GoogleLogin className="float-right margin-container"
+                <GoogleLogin 
                         clientId={`${process.env.REACT_APP_GOOGLE_CLIENT}`}
                         onSuccess={ this.responseGoogle }
                         onFailure={ this.responseGoogle }
