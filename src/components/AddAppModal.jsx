@@ -16,7 +16,7 @@ toggle = () => {
 render() {
     return (
         <div>
-            <MDBBtn color="red" onClick={this.toggle}>Add New App</MDBBtn>
+            <MDBBtn id="addapp-button" color="red" onClick={this.toggle}>Add New App</MDBBtn>
             <MDBContainer>
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                 <MDBModalHeader toggle={this.toggle}>Add New App</MDBModalHeader>
