@@ -29,7 +29,7 @@ export class Main extends Component {
             <div className="main-container">
                 <div>
                     {this.props.isLogin? 
-                    <div>
+                    <div className="login-main-header">
                         <UserProfile 
                             user={this.state.userData}
                         />
@@ -38,11 +38,11 @@ export class Main extends Component {
                 </div>
                 {this.state.categories.map(category=>
                 <div key={category._id}>
-                    <a href={'/apps/category/'+category._id}><h1 className="category-heading text-underline">{category.name}</h1></a>
                     <AppsInHorizontalList 
                         key={category.value}
                         categoryID={category._id}
                         categoryName={category.name}
+                        color="none"
                     />
                 </div> 
                 )}

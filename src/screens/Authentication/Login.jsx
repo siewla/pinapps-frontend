@@ -52,8 +52,8 @@ const Login = (props) => {
         }
     }
     return (
-        <div>
-            <MDBContainer onSubmit={handleSubmit} className="margin-container">
+        <div className="signin-container">
+            <MDBContainer onSubmit={handleSubmit} >
                 <MDBRow>
                     <MDBCol>
                         <MDBCard>
@@ -83,7 +83,7 @@ const Login = (props) => {
                                 />
                                 </div>
                                 <div className="text-center">
-                                <MDBBtn color="red" type="submit">Login</MDBBtn>
+                                <MDBBtn id="submit-button" color="red" type="submit">Login</MDBBtn>
                                 </div>
                             </form>
                             </MDBCardBody>

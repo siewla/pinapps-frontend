@@ -23,12 +23,12 @@ export class AppsByCategory extends Component {
     }
 
     render() {
-        console.log("props of apps by cat", this.props)
+        // console.log("props of apps by cat", this.props)
         return (
             <div className="main-container">
                 <div>
                     {this.props.isLogin? 
-                    <div>
+                    <div className="login-main-header">
                         <UserProfile 
                             user={this.state.userData}
                         />

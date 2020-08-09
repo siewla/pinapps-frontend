@@ -1,12 +1,27 @@
 import React, { Component } from 'react'
-import { isAuth } from '../../helpers/auth.services'
-import { Redirect } from 'react-router-dom'
+import AddAppModal from '../../components/AddAppModal'
+import UserProfile from '../../components/UserProfile'
+import { Redirect } from 'react-router-dom';
 export class MyApps extends Component {
+    constructor (props){
+        super (props);
+        this.state = {
+            userData:JSON.parse(localStorage.getItem('user'))
+        }
+    }
+
     render() {
         return (
-            <div>
-                {isAuth()? null:<Redirect to ='/'/>}
-                <h1 className="category-heading">MyApps</h1>
+            <div className="main-container">
+                <div>
+                    {this.props.isLogin? 
+                    <div className="login-main-header">
+                        <UserProfile 
+                            user={this.state.userData}
+                        />
+                        <AddAppModal />
+                    </div> : <Redirect to='/' />}
+                </div>
             </div>
         )
     }

@@ -18,60 +18,92 @@
 }
 
 .main-container-not-login {
+    background-color: purple;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 5vh;
+    padding-bottom: 30vh;
 }
 
-.margin-container {
+.register-container{
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 30vh;
+}
+.white-text-or{
+    color:white;
+    margin-top: 2vh;
+}
+#submit-button{
+    font-size: 2vh;
+}
+
+.signup-container{
     margin: 2vh;
+    width: 50vh;
+}
+
+.signin-container{
+    margin: 2vh;
+    width: 50vh;
+}
+
+.forget-container{
+    width: 50vh;
 }
 
 .category-heading {
     text-align: center;
-    color: red;
-    margin-top: 2vh;
+    color:white;
+    padding-top: 2vh;
+}
+
+.category-heading-white{
+    text-align: center;
+    color:white;
+    /* border: 1px solid black; */
+
 }
 
 .text-underline {
     text-decoration: underline;
 }
 
-.horizontal-apps-container {
+.category-container{
+    width: 80%;
     margin: auto;
-    width: 90%;
-    min-height: 40vh;
+    margin-bottom: 5vh;
+    padding: 1vh;
+    /* opacity: 0.5; */
+}
+
+.horizontal-apps-container {
     display: flex;
     justify-content: center;
-    /* overflow-y: visible; */
-    /* overflow-x: auto; */
-
+    /* border: 1px solid black; */
 }
 
 .horizontal-app-card {
     position: relative;
     display: block;
     transition: transform 500ms;
-    background-color: white;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
-    margin: 2vh;
-    border-radius: 1vh;
     overflow: visible;
 }
 
 .horizontal-apps-container .horizontal-app-card:focus,
 .horizontal-apps-container .horizontal-app-card:hover {
     display: block;
-    transform: scale(1.3);
+    transform: scale(1.2);
     z-index: 1;
 }
 
 .horizontal-app-image {
     margin: 2vh;
-    max-width: 40vh;
+    max-width: 30vh;
     /* border: 1px solid red */
 }
 
@@ -91,7 +123,13 @@
 }
 
 .main-container {
-    margin-bottom: 20vh;
+    padding-bottom: 25vh;
+    background-color: purple;
+}
+
+.login-main-header{
+    display: flex;
+    justify-content: space-between;
 }
 
 .favorite-button {
@@ -117,6 +155,7 @@
 .greeting-text {
     text-align: right;
     margin: 1vh;
+    color:white;
 }
 
 .small-name-text {
@@ -143,6 +182,7 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.15);
     padding: 3vh;
     border-radius: 1vh;
+    background-color: white;
 }
 
 .comments-container{
@@ -174,6 +214,10 @@
 .comment-footer{
     text-align: right;
     color: rgba(255, 0, 0, 0.50)
+}
+
+#addapp-button{
+    font-size: 2vh;
 }
 
 @media only screen and (max-width: 1024px) {

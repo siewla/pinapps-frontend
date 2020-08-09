@@ -29,7 +29,7 @@ export class About extends Component {
 
     render() {
         return (
-            <div>
+            <div className="main-container">
                 <h1 className="category-heading">About Us</h1>
                 <div className="about-container"> 
                     <h3>

@@ -45,8 +45,8 @@ const Forget = () => {
     }
     return (
         <div>
-            <div>
-                <MDBContainer onSubmit={handleSubmit} className="margin-container">
+            <div className="forget-container">
+                <MDBContainer onSubmit={handleSubmit} >
                     <MDBRow>
                         <MDBCol>
                             <MDBCard>

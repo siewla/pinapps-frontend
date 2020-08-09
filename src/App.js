@@ -54,7 +54,7 @@ export class App extends Component {
             <Route path ='/users/register' exact render={props => <Register {...props} userData={this.state.userData} setLogin={this.setLogin} />}/>
             <Route path ='/users/login' exact render={props => <NotLogin {...props} userData={this.state.userData} isLogin={this.state.isLogin} setLogin={this.setLogin} />}/>
             <Route path ='/apps/category/:categoryID' exact render={props => <AppsByCategory {...props} userData={this.state.userData} isLogin={this.state.isLogin} />}/> 
-            <Route path ='/myapps/' exact render={props => <MyApps {...props} userData={this.state.userData} />}/> 
+            <Route path ='/myapps/' exact render={props => <MyApps {...props} userData={this.state.userData} isLogin={this.state.isLogin} />}/> 
             <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
             <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
           </Switch>

@@ -65,10 +65,11 @@ const Register = (props) => {
         }
     }
     return (
-        <div>
+        <div className="register-container">
             {isAuth() ? <Redirect to ='/'/>: null}
             <Googlelogin setLogin={props.setLogin}/>
-            <div className = "margin-container">
+            <h4 className="white-text-or">or</h4>
+            <div className="signup-container">
                 <MDBContainer onSubmit={handleSubmit}>
                     <MDBRow>
                         <MDBCol>
@@ -120,7 +121,7 @@ const Register = (props) => {
                                 />
                                 </div>
                                 <div className="text-center py-4 mt-3">
-                                <MDBBtn color="red" type="submit">
+                                <MDBBtn id="submit-button" color="red" type="submit">
                                     Register
                                 </MDBBtn>
                                 </div>
