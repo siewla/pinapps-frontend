@@ -29,6 +29,7 @@ export class ShowAll extends Component {
                 <AppsList 
                     apps={this.state.apps}
                     isLogin={this.props.isLogin}
+                    fetchApps={this.fetchApps}
                 />
             </div>
         )

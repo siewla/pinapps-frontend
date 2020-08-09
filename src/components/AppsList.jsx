@@ -15,6 +15,7 @@ export default function AppList (props) {
                     category={app.category}
                     isLogin={props.isLogin}
                     likes={app.likes}
+                    fetchApps={this.fetchApps}
                 />
             )}
         </div>

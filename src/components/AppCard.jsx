@@ -4,13 +4,23 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
 import { Link } from 'react-router-dom';
 import AppComments from './AppComments';
 import likes from '../helpers/likes'
+import Axios from 'axios';
 
 class AppCard extends Component {
     constructor(props){
         super(props)
             this.state = {
-                modal:false
+                modal: false,
+                currentUser: JSON.parse(localStorage.getItem('user'))._id,
+                isLiked: false
             }
+    }
+
+    
+    componentDidMount() {
+        this.setState({
+            isLiked: this.props.likes.includes(this.state.currentUser)
+        })
     }
 
     toggle = () => {
@@ -19,8 +29,17 @@ class AppCard extends Component {
         });
     }
 
-    likeApp = () => {
-
+    toggleLike = async () => {
+        try {
+            await this.state.isLiked ? await Axios.patch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/unlike/${this.props.appId}`, {
+                userId: this.state.currentUser
+            }) : await Axios.patch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/like/${this.props.appId}`, {
+                userId: this.state.currentUser
+            })
+            this.props.fetchApps();
+        } catch (error) {
+            console.log(error);
+        }
     }
     
     render (){
@@ -38,13 +57,10 @@ class AppCard extends Component {
                         <MDBBtn color="red" onClick={this.toggle}>Details</MDBBtn>
                         { 
                             this.props.isLogin && 
-                                <div className="favorite-button" onClick={ this.likeApp }>
+                                <div className={`favorite-button favorite-button-${this.state.isLiked ? 'enabled' : 'disabled'}`} onClick={ this.toggleLike }>
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                 </div>
                         }
-                        <div className="favorite-button">
-                            <i className="fa fa-star" aria-hidden="true"></i>
-                        </div>
                     </MDBCardBody>
                 </MDBCard>
             </MDBCol>

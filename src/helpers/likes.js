@@ -6,7 +6,7 @@
  * @returns {Array} final tally of users who liked the app.
  */
 exports.toggleLikesOnApp = (likesArray, userId) => {
-    return likesArray.includes(userId) ? likesArray.filter(user => user !== userId) : likesArray.reduce((likes, user) => {
+    return likesArray.includes(userId) ? likesArray.filter(user => user !== userId) : likesArray.reduce((likes, [user]) => {
         return likes.push(user);
     }, [userId])
 }
