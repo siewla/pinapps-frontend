@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { authenticate, isAuth } from '../../helpers/auth'
+import { authenticate, isAuth } from '../../helpers/auth.services'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
-import Googlelogin from './Googlelogin'
 
-const Login = () => {
+
+const Login = (props) => {
     const [formData, setFormData] = useState({
         email:'',
         password1:'',
@@ -38,11 +37,12 @@ const Login = () => {
                                 email:'',
                                 password1:'',
                             })
+                            props.setLogin(true)
                         })
                     })
                     .catch(err =>{
                         setMessage({
-                            message: 'Email doesn\'t exist or wrong password'
+                            message: ''
                         })
                     })
             } else{
@@ -52,9 +52,8 @@ const Login = () => {
         }
     }
     return (
-        <div>
-            <Googlelogin />
-            <MDBContainer onSubmit={handleSubmit} className="margin-container">
+        <div className="signin-container">
+            <MDBContainer onSubmit={handleSubmit} >
                 <MDBRow>
                     <MDBCol>
                         <MDBCard>
@@ -84,7 +83,7 @@ const Login = () => {
                                 />
                                 </div>
                                 <div className="text-center">
-                                <MDBBtn type="submit">Login</MDBBtn>
+                                <MDBBtn id="submit-button" color="red" type="submit">Login</MDBBtn>
                                 </div>
                             </form>
                             </MDBCardBody>

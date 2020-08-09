@@ -1,19 +1,30 @@
 import React, { Component } from 'react'
-import { isAuth, logout } from '../../helpers/auth';
-import { Redirect } from 'react-router-dom';
-import { MDBBtn } from 'mdbreact';
 
 export class Main extends Component {
-    handleLogout = () =>{
-        logout()
+    constructor (){
+        super()
+        this.state={
+            userData:{}
+        }
+    }
+
+    fetchUserData = async() =>{
+        const results = JSON.parse(localStorage.getItem('user'))
+        this.setState({
+            userData:results
+        })
+
+    }
+
+    componentDidMount(){
+        this.fetchUserData()
     }
 
     render() {
+        // console.log(typeof(this.state.userData))
         return (
             <div>
-                <form onSubmit={this.handleLogout()}>
-                    <MDBBtn type="submit" color="primary">Logout</MDBBtn>
-                </form>
+                <h1>Welcome! {this.state.userData.name}</h1>
             </div>
         )
     }

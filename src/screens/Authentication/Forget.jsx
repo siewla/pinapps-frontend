@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
-import { set } from 'js-cookie'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 const Forget = () => {
@@ -42,13 +40,13 @@ const Forget = () => {
                 .catch(error => setMessage({message:'Invalid Email'}))
                 
         }else{
-                console.log('Please fill in all the fields')
+                // console.log('Please fill in all the fields')
         }
     }
     return (
         <div>
-            <div>
-                <MDBContainer onSubmit={handleSubmit}>
+            <div className="forget-container">
+                <MDBContainer onSubmit={handleSubmit} >
                     <MDBRow>
                         <MDBCol>
                             <MDBCard>
@@ -69,7 +67,7 @@ const Forget = () => {
                                     />
                                     </div>
                                     <div className="text-center">
-                                    <MDBBtn type="submit">Reset Password</MDBBtn>
+                                    <MDBBtn color="red" type="submit">Reset Password</MDBBtn>
                                     </div>
                                 </form>
                                 </MDBCardBody>

@@ -1,30 +1,29 @@
 import React, { Component } from 'react'
-import AppsInHorizontalList from '../../components/AppsInHorizontalList'
-import { MDBBtn } from 'mdbreact';
+import ShowAll from '../../components/ShowAll'
 import AddAppModal from '../../components/AddAppModal'
 import UserProfile from '../../components/UserProfile'
 
-
-export class Main extends Component {
+export class AppsByCategory extends Component {
     constructor (props){
         super (props);
         this.state = {
-            categories:[],
+            categoryName:'',
             userData:JSON.parse(localStorage.getItem('user'))
         }
     }
 
-    fetchCategories = async () =>{
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/categories/all`)
+    fetchCategory = async () =>{
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/categories/${this.props.match.params.categoryID}`)
         const results = await response.json();
-        this.setState({categories:results})
+        this.setState({categoryName:results.name})
     }
 
     componentDidMount (){
-        this.fetchCategories()
+        this.fetchCategory()
     }
 
     render() {
+        // console.log("props of apps by cat", this.props)
         return (
             <div className="main-container">
                 <div>
@@ -36,20 +35,14 @@ export class Main extends Component {
                         <AddAppModal />
                     </div> : null}
                 </div>
-                {this.state.categories.map(category=>
-                <div key={category._id}>
-                    <AppsInHorizontalList 
-                        key={category.value}
-                        categoryID={category._id}
-                        categoryName={category.name}
-                        color="none"
-                        isLogin={this.state.isLogin}
-                    />
-                </div> 
-                )}
+                <ShowAll 
+                    categoryID={this.props.match.params.categoryID}
+                    categoryName={this.state.categoryName}
+                    isLogin ={this.props.isLogin}
+                />
             </div>
         )
     }
 }
 
-export default Main
+export default AppsByCategory

@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import Googlelogin from '../Authentication/Googlelogin'
+import { isAuth } from '../../helpers/auth.services'
+import { Redirect } from 'react-router-dom'
 
-
-const Register = () => {
+const Register = (props) => {
     const [formData, setFormData] = useState({
         name:'',
         email:'',
@@ -31,7 +32,7 @@ const Register = () => {
     const handleSubmit = event =>{
         // console.log(process.env.REACT_APP_BACKEND_API_URL)
         event.preventDefault()
-        console.log(name, email, password1)
+        // console.log(name, email, password1)
         if(name && email && password1){
             if (password1 === password2){
                 axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/auth/register`,{
@@ -50,7 +51,7 @@ const Register = () => {
                     })
                 })
                     .catch(err =>{
-                        console.log(err)
+                        // console.log(err)
                     })
             } else{
                 setMessage({
@@ -64,9 +65,11 @@ const Register = () => {
         }
     }
     return (
-        <div>
-            <Googlelogin />
-            <div className = "margin-container">
+        <div className="register-container">
+            {isAuth() ? <Redirect to ='/'/>: null}
+            <Googlelogin setLogin={props.setLogin}/>
+            <h4 className="white-text-or">or</h4>
+            <div className="signup-container">
                 <MDBContainer onSubmit={handleSubmit}>
                     <MDBRow>
                         <MDBCol>
@@ -118,7 +121,7 @@ const Register = () => {
                                 />
                                 </div>
                                 <div className="text-center py-4 mt-3">
-                                <MDBBtn color="cyan" type="submit">
+                                <MDBBtn id="submit-button" color="red" type="submit">
                                     Register
                                 </MDBBtn>
                                 </div>

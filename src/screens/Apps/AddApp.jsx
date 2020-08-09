@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
-const AddApp = () => {
+const AddApp = (props) => {
     const [formData, setFormData] = useState({
         name:'',
         url:'',
@@ -15,14 +15,12 @@ const AddApp = () => {
     const [categoryData, setCategories] = useState({
         allCategories:[],
     });
-    
-    
 
     useEffect(() => {
         const getCategoryData = async () => {
-            console.log('getting category data')
+            // console.log('getting category data')
             const allCategories = await (await axios.get(`${process.env.REACT_APP_BACKEND_API_URL}/categories/all`)).data
-            console.log('call result',allCategories)
+            // console.log('call result',allCategories)
             setCategories({allCategories}) 
         }
         getCategoryData()
@@ -43,10 +41,12 @@ const AddApp = () => {
     const handleSubmit = event =>{
         event.preventDefault()
         if(name && url && description){
+            const userId = JSON.parse(localStorage.getItem('user'));
                 axios.post(`${process.env.REACT_APP_BACKEND_API_URL}/apps/new`,{
-                    name, url, description, category
+                    name, url, description, category, userId
                 })
                     .then(res =>{
+                        // console.log(res)
                         setFormData({
                             ...formData,
                             name:'',
@@ -75,7 +75,6 @@ const AddApp = () => {
                         <MDBCard>
                             <MDBCardBody>
                             <form>
-                                <p className="h5 text-center mb-4">Add New App</p>
                                 <p>{message}</p>
                                 <div className="grey-text">
                                 <MDBInput 
@@ -108,14 +107,13 @@ const AddApp = () => {
                                 <select className="browser-default custom-select" value={category} onChange={handleChange('category')}>
                                     
                                     <option>Category of App</option>
-                                    {categoryData.allCategories.map(category => {
-                                        console.log(category)
-                                        return <option value={category._id} key={category._id}>{category.name}</option>
+                                    {categoryData.allCategories.map(categoryItem => {
+                                        return <option value={categoryItem._id} key={categoryItem._id}>{categoryItem.name}</option>
                                     })}
                                 </select>
                                 </div>
                                 <div className="text-center">
-                                <MDBBtn type="submit">Add the App!</MDBBtn>
+                                <MDBBtn color="red" type="submit">Submit</MDBBtn>
                                 </div>
                             </form>
                             </MDBCardBody>

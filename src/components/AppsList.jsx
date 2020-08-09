@@ -6,12 +6,14 @@ export default function AppList (props) {
         <div className="all-apps-container">
             {props.apps.map(app =>
                 <AppCard 
-                    key={app._id} 
+                    key={app._id}
+                    appId={app._id} 
                     name={app.name}
                     description={app.description}
                     url={app.url}
                     screenshot={app.screenshot}
                     category={app.category}
+                    isLogin={props.isLogin}
                 />
             )}
         </div>

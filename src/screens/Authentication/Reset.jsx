@@ -63,7 +63,7 @@ export class Activate extends Component {
                 }
             })
                 .then(response => {
-                    console.log(response)
+                    // console.log(response)
                     this.setState({
                         password1: '',
                         password2:'',
@@ -71,7 +71,7 @@ export class Activate extends Component {
                     })
                 })
                 .catch(error => {
-                    console.log(error)
+                    // console.log(error)
                     this.setState({
                         message: 'Reset Token Activated Before'
                     })
@@ -91,7 +91,7 @@ export class Activate extends Component {
     render() {
         return (
             <div>
-                <MDBContainer onSubmit={this.handleSubmit}>
+                <MDBContainer onSubmit={this.handleSubmit} className="margin-container">
                     <MDBRow>
                         <MDBCol>
                             <MDBCard>
@@ -122,7 +122,7 @@ export class Activate extends Component {
                                     />
                                     </div>
                                     <div className="text-center">
-                                    <MDBBtn type="submit">Reset Password</MDBBtn>
+                                    <MDBBtn color="red" type="submit">Reset Password</MDBBtn>
                                     </div>
                                 </form>
                                 </MDBCardBody>
