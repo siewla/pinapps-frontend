@@ -14,6 +14,7 @@ export default function AppList (props) {
                     screenshot={app.screenshot}
                     category={app.category}
                     isLogin={props.isLogin}
+                    likes={app.likes}
                 />
             )}
         </div>

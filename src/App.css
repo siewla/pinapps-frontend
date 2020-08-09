@@ -138,18 +138,21 @@
 
 .favorite-button {
     float: right;
-
+    cursor: pointer;
     padding: 1vh;
     border-radius: 20%;
     background-color: royalblue;
+
 }
+
+
 
 .favorite-button-enabled {
     color: yellow;
 }
 
 .favorite-button-disabled {
-    color: black;
+    color: white;
 }
 
 .card-body-black {

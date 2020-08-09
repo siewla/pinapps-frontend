@@ -3,6 +3,7 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
     MDBContainer, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 import { Link } from 'react-router-dom';
 import AppComments from './AppComments';
+import likes from '../helpers/likes'
 
 class AppCard extends Component {
     constructor(props){
@@ -16,6 +17,10 @@ class AppCard extends Component {
         this.setState({
             modal: !this.state.modal
         });
+    }
+
+    likeApp = () => {
+
     }
     
     render (){
@@ -31,6 +36,12 @@ class AppCard extends Component {
                         </MDBCardText>
                         <MDBBtn color="red" href={this.props.url} target="_blank">Link</MDBBtn>
                         <MDBBtn color="red" onClick={this.toggle}>Details</MDBBtn>
+                        { 
+                            this.props.isLogin && 
+                                <div className="favorite-button" onClick={ this.likeApp }>
+                                    <i className="fa fa-star" aria-hidden="true"></i>
+                                </div>
+                        }
                         <div className="favorite-button">
                             <i className="fa fa-star" aria-hidden="true"></i>
                         </div>
