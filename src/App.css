@@ -237,6 +237,12 @@
     font-size: 2vh;
 }
 
+.total-comments{
+    margin-top: 2vh;
+    text-align: right;
+    font-size: 2vh;
+}
+
 @media only screen and (max-width: 1024px) {
     .horizontal-apps-container {
         width: 100%;

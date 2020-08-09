@@ -24,9 +24,9 @@ export default function AppComments(props) {
 
     return (
         <div>
-            <div>{comments.comments.length} Comments</div>
-            <CommentsContainer appId={props.appId} isLogin={props.isLogin} fetchComments={fetchComments} comments={comments.comments}/>
             {props.isLogin && <AddComment appId={props.appId} fetchComments={fetchComments}/>}
+            <div className="total-comments">{comments.comments.length} Comments</div>
+            <CommentsContainer appId={props.appId} isLogin={props.isLogin} fetchComments={fetchComments} comments={comments.comments}/>
         </div>
     )
 }
