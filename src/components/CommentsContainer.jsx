@@ -33,9 +33,12 @@ export class CommentsContainer extends Component {
             <div className="comments-container scrollbar scrollbar-black bordered-black square" id="comments-container">
                 {this.props.comments.map(comment => 
                 <ShowComment
+                    key={comment._id}
+                    commentId={comment._id}
                     author={comment.author} 
                     comment={comment.comment} 
                     date={comment.createdAt === comment.updatedAt ? comment.createdAt : comment.updatedAt}
+                    fetchComments={this.props.fetchComments}
                 />
                 )}
             </div>
