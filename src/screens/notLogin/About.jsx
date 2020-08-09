@@ -44,8 +44,9 @@ export class About extends Component {
                 </div>
                 <h1 className="category-heading">Frequently Asked Questions</h1>
                 <div className="about-container">
-                    {this.state.FAQ.map(item =>
+                    {this.state.FAQ.map((item,index) =>
                         <CollapseButton 
+                            key ={index}
                             question = {item.Question}
                             answer = {item.Answer}
                         />

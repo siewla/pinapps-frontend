@@ -55,6 +55,7 @@ const AddApp = (props) => {
                             category:''
                         });
                         window.location.reload()
+                        // this.props.fetchData()
                         // console.log('added app:',res)
                     })
                     .catch(err =>{

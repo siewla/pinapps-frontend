@@ -34,6 +34,7 @@ export class Main extends Component {
 
     componentDidMount (){
         this.fetchCategories()
+        this.fetchApps()
     }
 
     render() {

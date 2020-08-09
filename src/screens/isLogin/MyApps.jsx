@@ -20,7 +20,6 @@ export class MyApps extends Component {
         this.setState({
             apps: results
         })
-    
     }
 
     componentDidMount() {
