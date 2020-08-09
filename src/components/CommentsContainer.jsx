@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ShowComment from './ShowComment'
 import { animateScroll } from 'react-scroll'
+import "./scrollbar.css";
 
 export class CommentsContainer extends Component {
     constructor(props){
@@ -29,9 +30,9 @@ export class CommentsContainer extends Component {
 
     render() {
         return (
-            <div className="comments-container" id="comments-container">
+            <div className="comments-container scrollbar scrollbar-black bordered-black square" id="comments-container">
                 {this.props.comments.map(comment => 
-                <ShowComment 
+                <ShowComment
                     author={comment.author} 
                     comment={comment.comment} 
                     date={comment.createdAt === comment.updatedAt ? comment.createdAt : comment.updatedAt}

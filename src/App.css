@@ -146,7 +146,7 @@
 }
 
 .comments-container{
-    margin: 2vh auto;
+    margin-top: 2vh;
     width: 90%;
     display: flex;
     flex-direction: column-reverse;
