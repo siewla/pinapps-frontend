@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ShowAppPopOut from './ShowAppPopOut'
+import { MDBBtn } from 'mdbreact';
+
 
 export class AppsInHorizontalList extends Component {
     constructor(props){
@@ -24,7 +26,10 @@ export class AppsInHorizontalList extends Component {
             let subsetApps = this.state.apps.slice(0,3)
             return(
                 <div className="category-container" style={{backgroundColor: `${this.props.color}`}}>
-                    <a href={'/apps/category/'+this.props.categoryID}><h1 className="category-heading-white text-underline">{this.props.categoryName}</h1></a>
+                    <div className="category-heading-title">
+                        <a href={'/apps/category/'+this.props.categoryID}><h1 className="category-heading-white">{this.props.categoryName}</h1></a>
+                        <a href={'/apps/category/'+this.props.categoryID}><MDBBtn className="see-more-button" color="red" type="submit">See More</MDBBtn></a>
+                    </div>
                     <div className="horizontal-apps-container">
                         {subsetApps.map((app,index)=>
                             <div>
@@ -37,6 +42,7 @@ export class AppsInHorizontalList extends Component {
                             </div> 
                         )}
                     </div>
+                    
                 </div>
                 
             )

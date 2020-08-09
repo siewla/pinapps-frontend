@@ -3,6 +3,7 @@
     src: url('./fonts/BebasNeue.otf')
 }
 
+
 * {
     font-family: bebas_neue;
 }
@@ -69,14 +70,15 @@
 
 }
 
-.text-underline {
-    text-decoration: underline;
+.category-heading-title{
+    display: flex;
+    justify-content: space-around;
 }
 
 .category-container{
     width: 80%;
     margin: auto;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     padding: 1vh;
     /* opacity: 0.5; */
 }
