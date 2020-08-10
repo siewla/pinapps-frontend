@@ -54,8 +54,8 @@ const Forget = () => {
                                 <form>
                                     <p className="h5 text-center mb-4">Forgot Your Password?</p>
                                     <p>{message}</p>
-                                    <div className="grey-text">
-                                    <MDBInput 
+                                    <div className="white-text">
+                                    <MDBInput className="white-text"
                                         label="Type your email" 
                                         icon="envelope" group 
                                         type="email" 
