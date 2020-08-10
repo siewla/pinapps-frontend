@@ -13,7 +13,7 @@ export class About extends Component {
                 "Answer" : "A valid email is needed for activation, an activation link will be sent to the email upon registration."
             },
             {
-                "Question": "What if forgot my Pinapps Password?",
+                "Question": "What if I forgot my Pinapps Password?",
                 "Answer" : "Reset your password by email here, https://pinapps.herokuapp.com/users/password/forget"
             },
             {
