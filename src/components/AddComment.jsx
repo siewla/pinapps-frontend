@@ -2,7 +2,6 @@ import React from 'react'
 import { useState } from 'react'
 import Axios from 'axios';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn } from 'mdbreact';
-import CommentsContainer from './CommentsContainer'
 
 export default function AddComment(props) {
     const [formData, setFormData] = useState({

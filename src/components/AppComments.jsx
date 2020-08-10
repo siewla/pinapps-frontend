@@ -1,7 +1,5 @@
 import React from 'react'
-import ShowComment from './ShowComment'
-import { useEffect, useState } from 'react'
-import Axios from 'axios'
+import { useState } from 'react'
 import AddComment from './AddComment'
 import CommentsContainer from './CommentsContainer'
 

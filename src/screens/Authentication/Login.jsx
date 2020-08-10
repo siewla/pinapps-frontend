@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { authenticate, isAuth } from '../../helpers/auth.services'
+import { authenticate } from '../../helpers/auth.services'
 import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import Googlelogin from '../Authentication/Googlelogin'
@@ -61,8 +61,8 @@ const Login = (props) => {
                             <form className="form-container">
                                 <p className="h2 text-center mb-4">Sign in</p>
                                 <p>{message}</p>
-                                <div className="grey-text">
-                                <MDBInput 
+                                <div className="white-text">
+                                <MDBInput className="white-text"
                                     label="Type your email" 
                                     icon="envelope" group 
                                     type="email" 
@@ -72,7 +72,7 @@ const Login = (props) => {
                                     onChange={handleChange('email')}
                                     value={email}
                                 />
-                                <MDBInput 
+                                <MDBInput className="white-text"
                                     label="Type your password" 
                                     icon="lock" 
                                     group 

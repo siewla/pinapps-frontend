@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader } from 'mdbreact';
-import AddApp from '../screens/Apps/AddApp'
+import { MDBContainer, MDBModal, MDBModalBody, MDBModalHeader } from 'mdbreact';
 
 class UserProfile extends Component {
 state = {

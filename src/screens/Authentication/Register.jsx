@@ -76,8 +76,8 @@ const Register = (props) => {
                             <form className="form-container">
                                 <p className="h2 text-center py-4">Sign up</p>
                                 <p>{message}</p>
-                                <div className="grey-text">
-                                <MDBInput
+                                <div className="white-text">
+                                <MDBInput className="white-text"
                                     label="Your name"
                                     icon="user"
                                     group
@@ -88,7 +88,7 @@ const Register = (props) => {
                                     onChange={handleChange('name')}
                                     value={name}
                                 />
-                                <MDBInput
+                                <MDBInput className="white-text"
                                     label="Your email"
                                     icon="envelope"
                                     group
@@ -99,7 +99,7 @@ const Register = (props) => {
                                     onChange={handleChange('email')}
                                     value={email}
                                 />
-                                <MDBInput
+                                <MDBInput className="white-text"
                                     label="Your password"
                                     icon="lock"
                                     group
@@ -108,7 +108,7 @@ const Register = (props) => {
                                     onChange={handleChange('password1')}
                                     value={password1}
                                 />
-                                <MDBInput
+                                <MDBInput className="white-text"
                                     label="Confirm your password"
                                     icon="lock"
                                     group

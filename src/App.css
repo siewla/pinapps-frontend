@@ -192,7 +192,6 @@
 }
 
 
-
 .favorite-button-enabled {
     color: yellow;
 }
@@ -286,6 +285,11 @@
     margin-top: 2vh;
     text-align: right;
     font-size: 2vh;
+}
+
+.card-body-title-flex{
+    display:flex;
+    justify-content: space-between;
 }
 
 @media only screen and (max-width: 1024px) {
