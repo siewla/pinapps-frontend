@@ -5,7 +5,8 @@ export class ShowAll extends Component {
     constructor(props){
         super(props);
         this.state = {
-            apps:[]
+            apps:[],
+            searchString:''
         }
     }
 

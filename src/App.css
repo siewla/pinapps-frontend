@@ -299,6 +299,26 @@
     justify-content: space-between;
 }
 
+.search-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.active-pink-4 input[type="text"]:focus:not([readonly]) {
+    border: 1px solid red;
+    box-shadow: 0 0 0 1px red;
+}
+
+.active-pink-3 input[type="text"] {
+border: 1px solid red;
+box-shadow: 0 0 0 1px red;
+}
+
 @media only screen and (max-width: 1024px) {
     .horizontal-apps-container {
         width: 100%;
