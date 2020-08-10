@@ -3,9 +3,11 @@
     src: url('./fonts/BebasNeue.otf')
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
 
 * {
     font-family: bebas_neue;
+    /* font-family: 'Merriweather', serif; */
 }
 
 .app-title {
@@ -244,6 +246,11 @@
     padding: 3vh;
     border-radius: 1vh;
     background-color: white;
+    
+}
+
+.about-text{
+    font-family: 'Merriweather', serif !important;
 }
 
 .comments-container {

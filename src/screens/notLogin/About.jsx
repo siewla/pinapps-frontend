@@ -9,40 +9,50 @@ export class About extends Component {
                 "Answer" : "It is free."
             },
             {
-                "Question": "Question 2",
-                "Answer" : "Answer 2"
+                "Question": "How do i activate my account?",
+                "Answer" : "A valid email is needed for activation, an activation link will be sent to the email upon registration."
             },
             {
-                "Question": "Question 3",
-                "Answer" : "Answer 3"
+                "Question": "What if forgot my Pinapps Password?",
+                "Answer" : "Reset your password by email here, https://pinapps.herokuapp.com/users/password/forget"
             },
             {
-                "Question": "Question 4",
-                "Answer" : "Answer 4"
+                "Question": "How do i download the Pinapps App?",
+                "Answer" : "No installation needed, it is a browser based application."
             },
             {
-                "Question": "Question 5",
-                "Answer" : "Answer 5"
+                "Question": "How can i get support?",
+                "Answer" : "Please contact us via email: pinappsproject@gmail.com"
             },
         ],
         useCase: 
-            <div>
-                <h2>
-                    Have you ever formatted your computer and now you cannot remember which apps you normally use? Especially the apps that you don’t use so often but when you do, you rely 100% on?
-                </h2>
-                <h2>
-                    Have you ever wanted to look for an app for a specific use, but have no idea which app it was that your friend mentioned? Or worse, you have forgotten which was the friend that recommended the app to you in the first place?
-                </h2>
+            <div className="about-text">
+                <h4 className="about-text">
+                    Have you ever formatted your computer and now you cannot remember which apps you normally use? 
+                    
+                </h4>
+                <h4 className="about-text">
+                    Especially the apps that you don’t use so often but when you do, you rely 100% on?
+                </h4>
+                <h4 className="about-text">
+                    Have you ever wanted to look for an app for a specific use, 
+                </h4>
+                <h4 className="about-text">
+                    but have no idea which app it was that your friend mentioned?
+                </h4>
+                <h4 className="about-text">
+                    Or worse, you have forgotten which was the friend that recommended the app to you in the first place?
+                </h4>
             </div>,
-        about:  <h3>
-                    <span className="red-text">PinApps</span> is the application that allowing you to save/pin 
+        about:  <h4 className="about-text">
+                   <h2 className="red-text">PinApps</h2> The application that allowing you to save/pin 
                     your favorite apps easily and it also acts as platform for you 
                     to find the best apps in each category.
-                </h3>,
-        attribution: <h3>PinsApp is proudly bought to you by <a 
+                </h4>,
+        attribution: <h6 className="about-text">PinsApp is proudly bought to you by <a 
                         href="https://github.com/neocheekiong/">Neo Chee Kiong</a> and <a 
                         href="https://github.com/siewla/">Pang Siew La</a>.
-                    </h3>
+                    </h6>
     }
 
     render() {
@@ -51,7 +61,9 @@ export class About extends Component {
                 <h1 className="category-heading">About Us</h1>
                 <div className="about-container"> 
                     {this.state.useCase}
+                    <hr className="hr" />
                     {this.state.about}
+                    <hr className="hr" />
                     {this.state.attribution}
                 </div>
                 <h1 className="category-heading">Frequently Asked Questions</h1>

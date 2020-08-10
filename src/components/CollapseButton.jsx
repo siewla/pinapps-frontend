@@ -15,7 +15,7 @@ class CollapseButton extends Component {
     render() {
         return (
             <div>
-                <MDBBtn
+                <MDBBtn className="about-text"
                     color="dark"
                     onClick={this.toggleCollapse("basicCollapse")}
                     style={{ marginBottom: "1rem" }}
@@ -24,7 +24,7 @@ class CollapseButton extends Component {
                     {this.props.question}
                 </MDBBtn>
                 <MDBCollapse id="basicCollapse" isOpen={this.state.collapseID}>
-                <p>{this.props.answer}</p>
+                <p className="about-text">{this.props.answer}</p>
                 </MDBCollapse>
             </div>
             );
