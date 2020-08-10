@@ -16,7 +16,13 @@ export class AppsInHorizontalList extends Component {
         const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/apps/category/${this.props.categoryID}`)
         // console.log('fetching apps')
         const results = await response.json ();
-        this.setState({apps:results})
+        this.setState(
+            {apps:results.sort((a,b)=>{
+                const diff = b.likes.length-a.likes.length;
+                return diff;
+                })
+            }
+        )
     }
 
     componentDidMount (){

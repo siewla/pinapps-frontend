@@ -5,12 +5,6 @@ import "./scrollbar.css";
 import { Link } from 'react-router-dom';
 
 export class CommentsContainer extends Component {
-    constructor(props){
-        super(props)
-    }
-
-    
-
     scrollToTop =() =>{
         animateScroll.scrollToTop({
             containerId: "comments-container"
