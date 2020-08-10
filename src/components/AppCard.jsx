@@ -62,7 +62,10 @@ class AppCard extends Component {
                 <MDBCard style={{ width: "22rem" }}>
                     <MDBCardImage className="img-app-card" src={this.props.screenshot} waves />
                     <MDBCardBody className="card-body-black">
-                        <MDBCardTitle>{this.props.name}</MDBCardTitle>
+                        <div className="card-body-title-flex">
+                            <MDBCardTitle>{this.props.name}</MDBCardTitle>
+                            <h6 className="yellow-text"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {this.props.likes.length}</h6>
+                        </div>
                         <MDBCardText>
                             {this.props.description}
                         </MDBCardText>
@@ -73,8 +76,7 @@ class AppCard extends Component {
                                 <div className={`favorite-button favorite-button-${this.state.isLiked ? 'enabled' : 'disabled'}`} onClick={ this.toggleLike }>
                                     <i className="fa fa-star" aria-hidden="true"></i>
                                 </div>
-                        }
-                    </MDBCardBody>
+                        }                    </MDBCardBody>
                 </MDBCard>
             </MDBCol>
             <MDBContainer>

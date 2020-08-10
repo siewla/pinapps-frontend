@@ -287,6 +287,11 @@
     font-size: 2vh;
 }
 
+.card-body-title-flex{
+    display:flex;
+    justify-content: space-between;
+}
+
 @media only screen and (max-width: 1024px) {
     .horizontal-apps-container {
         width: 100%;
