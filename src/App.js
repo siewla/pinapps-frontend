@@ -7,6 +7,7 @@ import HeaderNotLogin from '../src/screens/notLogin/HeaderNotLogin';
 
 import Activate from './screens/Authentication/Activate'
 import Reset from './screens/Authentication/Reset'
+import Forget from './screens/Authentication/Forget'
 
 import Main from './screens/notLogin/Main'
 import About from './screens/notLogin/About'
@@ -57,6 +58,7 @@ export class App extends Component {
             <Route path ='/myapps/' exact render={props => <MyApps {...props} userData={this.state.userData} isLogin={this.state.isLogin} />}/> 
             <Route path ='/users/activate/:token' exact render={props => <Activate {...props} />}/>  
             <Route path ='/users/password/reset/:token' exact render={props => <Reset {...props} />}/>  
+            <Route path ='/users/password/forget' exact render={props => <Forget {...props} />}/>  
           </Switch>
           <Footer />
         </Router>

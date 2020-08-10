@@ -44,7 +44,7 @@ const Forget = () => {
         }
     }
     return (
-        <div>
+        <div className="middle-container">
             <div className="forget-container">
                 <MDBContainer onSubmit={handleSubmit} >
                     <MDBRow>

@@ -90,14 +90,14 @@ export class Activate extends Component {
 
     render() {
         return (
-            <div>
-                <MDBContainer onSubmit={this.handleSubmit} className="margin-container">
+            <div className="middle-container">
+                <MDBContainer onSubmit={this.handleSubmit}>
                     <MDBRow>
                         <MDBCol>
                             <MDBCard>
                                 <MDBCardBody>
                                 <form>
-                                    <p className="h5 text-center mb-4">Reset Password</p>
+                                    <p className="h2 text-center mb-4">Reset Password</p>
                                     <p>{this.state.message}</p>
                                     <div className="grey-text">
                                     <MDBInput 

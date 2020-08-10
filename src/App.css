@@ -36,10 +36,26 @@
     padding-bottom: 30vh;
 }
 
-.white-text-or {
-    color: white;
-    margin-top: 2vh;
+.form-container{
+    /* border: 1px solid black; */
+    width: 90%;
+    padding: 1vh;
+    background-color: none;
+    margin: auto;
 }
+
+.signup-container .card{
+    background-color: rgba(0, 0, 0, 0.15);
+    color:white;
+}
+
+.flex-center-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
 
 #submit-button {
     font-size: 2vh;
@@ -53,10 +69,22 @@
 .signin-container {
     margin: 2vh;
     width: 50vh;
+    padding-bottom: 20vh;
+}
+
+.signin-container .card{
+    background-color: rgba(0, 0, 0, 0.15);
+    color:white;
 }
 
 .forget-container {
     width: 50vh;
+    
+}
+
+.forget-container .card{
+    background-color: rgba(0, 0, 0, 0.15);
+    color:white;
 }
 
 .category-heading {
@@ -122,8 +150,25 @@
 }
 
 .middle-container {
-    text-align: center;
-    margin-top: 2vh;
+    padding-top: 20vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 100vh;
+}
+
+.activate-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.middle-container .card{
+    background-color: rgba(0, 0, 0, 0.15);
+    color:white;
 }
 
 .main-container {

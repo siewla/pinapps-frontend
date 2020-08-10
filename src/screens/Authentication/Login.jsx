@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { authenticate, isAuth } from '../../helpers/auth.services'
 import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
-
+import Googlelogin from '../Authentication/Googlelogin'
 
 const Login = (props) => {
     const [formData, setFormData] = useState({
@@ -58,8 +58,8 @@ const Login = (props) => {
                     <MDBCol>
                         <MDBCard>
                             <MDBCardBody>
-                            <form>
-                                <p className="h5 text-center mb-4">Sign in</p>
+                            <form className="form-container">
+                                <p className="h2 text-center mb-4">Sign in</p>
                                 <p>{message}</p>
                                 <div className="grey-text">
                                 <MDBInput 
@@ -86,6 +86,13 @@ const Login = (props) => {
                                 <MDBBtn id="submit-button" color="red" type="submit">Login</MDBBtn>
                                 </div>
                             </form>
+                            <div className="flex-center-container">
+                                <h4>or</h4>
+                                <Googlelogin setLogin={props.setLogin}/>
+                            </div>
+                            <hr className="hr-light" />
+                            <h6 className="text-center">Forgot Password? <span><a href="/users/password/forget">Reset</a></span></h6>
+                            <h6 className="text-center">Don't have an account? <span><a href="/users/register">Sign Up</a></span></h6>
                             </MDBCardBody>
                         </MDBCard>
                     </MDBCol>

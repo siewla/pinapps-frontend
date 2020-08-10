@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import jwt from 'jsonwebtoken'
 import axios from 'axios'
-import { MDBBtn } from 'mdbreact';
-
+import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 export class Activate extends Component {
     constructor (props){
@@ -59,12 +58,22 @@ export class Activate extends Component {
     render() {
         return (
             <div className="middle-container">
-                <h1>{this.state.name}</h1>
-                <h2>{this.state.message}</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <MDBBtn type="submit" color="red">Activate Your Account</MDBBtn>
-                </form>
-                <a href ='/users/register'><span>Not Registered?</span></a>
+                <MDBContainer className="activate-container">
+                    <MDBRow>
+                        <MDBCol>
+                            <MDBCard>
+                                <MDBCardBody>
+                                <h1>{this.state.name}</h1>
+                                <h2>{this.state.message}</h2>
+                                <form onSubmit={this.handleSubmit}>
+                                    <MDBBtn type="submit" color="red">Activate Your Account</MDBBtn>
+                                </form>
+                                <a href ='/users/register'><span>Not Registered?</span></a>
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+                    </MDBRow>
+                </MDBContainer> 
             </div>
         )
     }

@@ -67,16 +67,14 @@ const Register = (props) => {
     return (
         <div className="register-container">
             {isAuth() ? <Redirect to ='/'/>: null}
-            <Googlelogin setLogin={props.setLogin}/>
-            <h4 className="white-text-or">or</h4>
             <div className="signup-container">
                 <MDBContainer onSubmit={handleSubmit}>
                     <MDBRow>
                         <MDBCol>
                         <MDBCard>
                             <MDBCardBody>
-                            <form>
-                                <p className="h4 text-center py-4">Sign up</p>
+                            <form className="form-container">
+                                <p className="h2 text-center py-4">Sign up</p>
                                 <p>{message}</p>
                                 <div className="grey-text">
                                 <MDBInput
@@ -126,6 +124,12 @@ const Register = (props) => {
                                 </MDBBtn>
                                 </div>
                             </form>
+                            <div className="flex-center-container">
+                                <h4>or</h4>
+                                <Googlelogin setLogin={props.setLogin}/>
+                            </div>
+                            <hr className="hr-light" />
+                                <h6 className="text-center">Already have an account? <span><a href="/users/login">Login</a></span></h6>
                             </MDBCardBody>
                         </MDBCard>
                         </MDBCol>
