@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import AppsInHorizontalList from '../../components/AppsInHorizontalList'
-import { MDBBtn } from 'mdbreact';
 import AddAppModal from '../../components/AddAppModal'
 import UserProfile from '../../components/UserProfile'
 

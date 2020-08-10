@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Login from '../Authentication/Login'
-import Forget from '../Authentication/Forget'
 import { Redirect } from 'react-router-dom'
 
 export class NotLogin extends Component {

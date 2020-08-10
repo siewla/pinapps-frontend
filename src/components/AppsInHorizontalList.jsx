@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ShowAppPopOut from './ShowAppPopOut'
 import { MDBBtn } from 'mdbreact';
 import AppCard from '../components/AppCard'
 

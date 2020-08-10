@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol,
-    MDBContainer, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
-import { Link } from 'react-router-dom';
+    MDBContainer, MDBModal, MDBModalBody, MDBModalHeader } from 'mdbreact';
 import AppComments from './AppComments';
 import Axios from 'axios';
 
@@ -64,7 +63,7 @@ class AppCard extends Component {
                     <MDBCardBody className="card-body-black">
                         <div className="card-body-title-flex">
                             <MDBCardTitle>{this.props.name}</MDBCardTitle>
-                            <h6 className="yellow-text"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {this.props.likes.length}</h6>
+                            <h6 className="yellow-text"><i className="fa fa-thumbs-up" aria-hidden="true"></i> {this.props.likes.length}</h6>
                         </div>
                         <MDBCardText>
                             {this.props.description}
