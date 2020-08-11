@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AddAppModal from '../../components/apps/AddAppModal'
 import UserProfile from '../../components/UserProfile'
 import { Redirect } from 'react-router-dom';
-import AppList from '../../components/AppsList';
+import AppsList from '../../components/apps/AppsList';
 
 export class MyApps extends Component {
     constructor (props){
@@ -38,7 +38,7 @@ export class MyApps extends Component {
                         
                     </div> : <Redirect to='/' />}
                     <h1 className="category-heading">My Apps</h1>
-                    <AppList apps={this.state.apps} isLogin={this.props.isLogin} fetchApps={this.fetchMyApps}/>
+                    <AppsList apps={this.state.apps} isLogin={this.props.isLogin} fetchApps={this.fetchMyApps}/>
                 </div>
             </div>
         )
