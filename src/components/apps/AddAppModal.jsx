@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader } from 'mdbreact';
-import AddApp from '../../screens/Apps/AddApp'
+import AddApp from './AddApp'
 
 class AddAppModal extends Component {
 state = {
