@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ShowAll from '../../components/ShowAll'
+import ShowAll from '../../components/apps/ShowAll'
 import AddAppModal from '../../components/apps/AddAppModal'
 import UserProfile from '../../components/UserProfile'
 
