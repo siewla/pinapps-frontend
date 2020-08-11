@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AppsList from './AppsList'
+import AppsList from '../../screens/Apps/AppsList'
 
 export class ShowAll extends Component {
     constructor(props){

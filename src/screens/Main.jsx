@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AppsInHorizontalList from '../components/apps/AppsInHorizontalList'
+import AppsInHorizontalList from './Apps/AppsInHorizontalList'
 import AddAppModal from '../components/apps/AddAppModal'
 import UserProfile from '../components/UserProfile'
 

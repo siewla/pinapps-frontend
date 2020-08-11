@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import AppCard from './AppCard'
-import SearchBox from './SearchBox'
+import AppCard from '../../components/apps/AppCard'
+import SearchBox from '../../components/apps/SearchBox'
 
 export class AppList extends Component {
     constructor (props){

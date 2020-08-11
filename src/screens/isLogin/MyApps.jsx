@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AddAppModal from '../../components/apps/AddAppModal'
 import UserProfile from '../../components/UserProfile'
 import { Redirect } from 'react-router-dom';
-import AppsList from '../../components/apps/AppsList';
+import AppsList from '../Apps/AppsList';
 
 export class MyApps extends Component {
     constructor (props){
