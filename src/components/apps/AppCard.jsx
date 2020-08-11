@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol,
     MDBContainer, MDBModal, MDBModalBody, MDBModalHeader } from 'mdbreact';
-import AppComments from './AppComments';
+import AppComments from '../comments/AppComments';
 import Axios from 'axios';
 
 class AppCard extends Component {
