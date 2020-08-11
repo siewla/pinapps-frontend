@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import AddComment from '../AddComment'
-import CommentsContainer from '../CommentsContainer'
+import AddComment from './AddComment'
+import CommentsContainer from './CommentsContainer'
 
 export default function AppComments(props) {
     const [comments, setComments] = useState({
