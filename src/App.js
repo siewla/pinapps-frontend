@@ -9,7 +9,7 @@ import Activate from './screens/Authentication/Activate'
 import Reset from './screens/Authentication/Reset'
 import Forget from './screens/Authentication/Forget'
 
-import Main from './screens/notLogin/Main'
+import Main from './screens/Main'
 import About from './screens/notLogin/About'
 import Register from './screens/Authentication/Register'
 import NotLogin from './screens/notLogin/NotLogin'
