@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ShowAll from '../../components/ShowAll'
-import AddAppModal from '../../components/AddAppModal'
+import AddAppModal from '../../components/apps/AddAppModal'
 import UserProfile from '../../components/UserProfile'
 
 export class AppsByCategory extends Component {
