@@ -15,7 +15,9 @@ toggle = () => {
 render() {
     return (
         <div>
-            <h4 className="greeting-text">Hi, <span onClick={this.toggle} className="small-name-text">{this.props.user.name}</span></h4>
+            <h4 className="greeting-text">Hi, <span onClick={this.toggle} className="small-name-text" style={
+                {cursor: 'pointer'}
+            }>{this.props.user.name}</span></h4>
             <MDBContainer>
             <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
                 <MDBModalHeader toggle={this.toggle}>Account Details</MDBModalHeader>
