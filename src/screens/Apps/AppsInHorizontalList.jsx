@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MDBBtn } from 'mdbreact';
-import AppCard from './AppCard'
+import AppCard from '../../components/apps/AppCard'
 
 
 export class AppsInHorizontalList extends Component {
