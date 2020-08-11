@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 import {trackPromise} from 'react-promise-tracker'
-import Loader from '../../components/Loader';
+import Loader from '../Loader';
 
 const AddApp = (props) => {
     const [formData, setFormData] = useState({
