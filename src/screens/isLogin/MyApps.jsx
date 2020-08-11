@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AddAppModal from '../../components/AddAppModal'
+import AddAppModal from '../../components/apps/AddAppModal'
 import UserProfile from '../../components/UserProfile'
 import { Redirect } from 'react-router-dom';
 import AppList from '../../components/AppsList';
