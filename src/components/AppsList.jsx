@@ -17,7 +17,7 @@ export class AppList extends Component {
     render(){
         const appLists = this.props.apps.filter(app =>{
             return (app.name.toLowerCase().includes(this.state.searchString.toLowerCase())||
-            app.name.toLowerCase().includes(this.state.searchString.toLowerCase()))
+            app.description.toLowerCase().includes(this.state.searchString.toLowerCase()))
         })
         return (
             <div>
