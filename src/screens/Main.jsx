@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import AppsInHorizontalList from '../../components/AppsInHorizontalList'
-import AddAppModal from '../../components/AddAppModal'
-import UserProfile from '../../components/UserProfile'
+import AppsInHorizontalList from '../components/AppsInHorizontalList'
+import AddAppModal from '../components/AddAppModal'
+import UserProfile from '../components/UserProfile'
 
 
 export class Main extends Component {
